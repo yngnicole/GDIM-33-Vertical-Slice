@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] public Rigidbody2D rb;
+    [SerializeField] public float speed; 
+    private 
+
+    
     // Start is called before the first frame update
     void Start()
     {
