@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] public Rigidbody2D rb;
-    [SerializeField] public float speed; 
-    private 
+    [SerializeField] private float _speed;
+    [SerializeField] private Transform _playerTransform;
 
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        //movement with WASD and arrow keys
+        float movementX = Input.GetAxisRaw("Horizontal");
+        float movementY = Input.GetAxisRaw("Vertical");
+
+        UnityEngine.Vector2 movement = new UnityEngine.Vector2(movementX, movementY);
+
+        transform.Translate(movement * _speed * Time.deltaTime);
     }
 }
