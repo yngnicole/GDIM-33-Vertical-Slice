@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Ghost HP: " + currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -25,7 +24,6 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Ghost died");
         Destroy(gameObject);
     }
 }
