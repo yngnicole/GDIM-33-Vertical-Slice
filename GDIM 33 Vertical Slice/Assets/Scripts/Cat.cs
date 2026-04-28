@@ -50,7 +50,7 @@ public class Cat : MonoBehaviour
         }
     }
 
-    void Attack()
+    public void Attack()
     {
         // Stop movement
         rb.velocity = Vector2.zero;
