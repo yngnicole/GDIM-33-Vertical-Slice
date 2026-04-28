@@ -5,11 +5,7 @@ input from the player when they press WASD or the arrow keys. I plugged these tw
 I multiplied this Vector 2 node with the speed variable from the get Variable Node. This Vector2 movement is then plugged as input for the Rigidbody2d Set Velocity so that the Player will actually move. 
 I have the OnFixedUpdate connecting to the Rigidbody2D so that the movement and physics is updated. 
 
-Pick 1 Visual Scripting Graph in your game and explain how it works. This answer should be about a paragraph.
-Update your break-down with the state machine system you're using in your game, and attach your new break-down in your Devlog. 
-Then, explain what you updated about your break-down, how your state machine works, and how your state machine is related to OTHER systems in your game. 
-This answer may take about 2 paragraphs.
-
+<img width="1476" height="1104" alt="Screenshot 2026-04-28 164432" src="https://github.com/user-attachments/assets/5b8b7b69-ca45-44b5-b688-40fafe7d045b" />
 - My state machine has two states: Following Player and Attacking. In the Following Player state. I get the position of 
 the cat and the positino of the Player gameobject by subtracting Player position - Cat position and then input the result of this
 into a Vector2 node and compared if it was greater than stopDistance. If the Player position - Cat position is greater then stopDistance 
