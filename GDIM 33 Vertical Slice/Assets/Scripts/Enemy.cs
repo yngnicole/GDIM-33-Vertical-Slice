@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
+    public System.Action OnDeath;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -24,6 +26,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+
+        OnDeath?.Invoke();
         Destroy(gameObject);
     }
 }

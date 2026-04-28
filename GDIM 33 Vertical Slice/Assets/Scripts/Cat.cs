@@ -17,6 +17,7 @@ public class Cat : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (_enemy == null) return;
         float distanceToEnemy = Vector2.Distance(transform.position, _enemy.position);
 
         // If enemy is close → attack
@@ -53,8 +54,10 @@ public class Cat : MonoBehaviour
         // Stop movement
         rb.velocity = Vector2.zero;
 
+        if (_enemy == null) return;
+
         if(Time.time - lastAttackTime > attackCooldown)
-    {
+        {
             Enemy ghost = _enemy.GetComponent<Enemy>();
 
             if (ghost != null)
