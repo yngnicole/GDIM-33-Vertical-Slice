@@ -53,7 +53,7 @@ public class Cat : MonoBehaviour
     public void Attack()
     {
         // Stop movement
-        rb.velocity = Vector2.zero;
+        //rb.velocity = Vector2.zero;
 
         if (_enemy == null) return;
 
