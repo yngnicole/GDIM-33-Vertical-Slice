@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class Cat : MonoBehaviour
     public float attackCooldown = 1f;
     private float lastAttackTime;
 
+    public static Action<Enemy, int>OnAttack;
 
     void FixedUpdate()
     {
@@ -30,7 +32,6 @@ public class Cat : MonoBehaviour
             FollowPlayer();
         }
     }
-
 
     void FollowPlayer()
     {
@@ -58,12 +59,14 @@ public class Cat : MonoBehaviour
 
         if(Time.time - lastAttackTime > attackCooldown)
         {
-            Enemy ghost = _enemy.GetComponent<Enemy>();
-
+            //OnAttack?.Invoke();
+           Enemy ghost = _enemy.GetComponent<Enemy>();
+           
             if (ghost != null)
             {
                 ghost.TakeDamage(damage);
             }
+           
 
             lastAttackTime = Time.time;
         }

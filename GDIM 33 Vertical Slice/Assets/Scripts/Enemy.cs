@@ -9,6 +9,16 @@ public class Enemy : MonoBehaviour
 
     public System.Action OnDeath;
 
+    private void OnEnable()
+    {
+        //Cat.OnAttack += TakeDamage;
+    }
+
+    private void OnDisable()
+    {
+       // Cat.OnAttack -= TakeDamage;
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
