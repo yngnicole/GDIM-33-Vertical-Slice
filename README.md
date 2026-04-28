@@ -6,6 +6,7 @@ I multiplied this Vector 2 node with the speed variable from the get Variable No
 I have the OnFixedUpdate connecting to the Rigidbody2D so that the movement and physics is updated. 
 
 <img width="1476" height="1104" alt="Screenshot 2026-04-28 164432" src="https://github.com/user-attachments/assets/5b8b7b69-ca45-44b5-b688-40fafe7d045b" />
+
 - My state machine has two states: Following Player and Attacking. In the Following Player state. I get the position of 
 the cat and the positino of the Player gameobject by subtracting Player position - Cat position and then input the result of this
 into a Vector2 node and compared if it was greater than stopDistance. If the Player position - Cat position is greater then stopDistance 
