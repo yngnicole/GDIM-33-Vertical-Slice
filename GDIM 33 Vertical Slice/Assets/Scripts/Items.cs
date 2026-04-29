@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
+    //Press(v) to consume for cat
+    //once consumed gives health to cat
+
+
+
     // Start is called before the first frame update
     void Start()
     {
