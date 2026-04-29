@@ -1,23 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Items : MonoBehaviour
 {
+    [SerializeField] private int _medicineStat = 10;
+
     //Press(v) to consume for cat
     //once consumed gives health to cat
+    // currenthealth += Medicinestat
 
+    public static Action<int> OnConsumeMedicine;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ConsumeMedicine();
+        }
+
+    }
+
+    public void ConsumeMedicine()
+    {
+        OnConsumeMedicine?.Invoke(_medicineStat);
+        gameObject.SetActive(false);
     }
 }

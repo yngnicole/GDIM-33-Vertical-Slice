@@ -15,9 +15,18 @@ public class Cat : MonoBehaviour
     [SerializeField] public float _attackCooldown = 1f;
     [SerializeField] private int _maxHealth = 100;
     
-    private float _currentHealth;
+    public float _currentHealth;
     private float lastAttackTime;
 
+    private void OnEnable()
+    {
+        Items.OnConsumeMedicine += Heal;
+    }
+
+    private void OnDisable()
+    {
+        Items.OnConsumeMedicine -= Heal;
+    }
     void Start()
     {
         _currentHealth = _maxHealth;
@@ -57,6 +66,16 @@ public class Cat : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void Heal(int amount)
+    {
+        _currentHealth += amount;
+
+        if (_currentHealth > _maxHealth)
+        {
+            _currentHealth = _maxHealth;
+        }
     }
 
 
