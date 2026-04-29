@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private int _currentHealth;
     public int _damage = 10;
 
-    public static Action<int> OnEnemyTakeDamage;
+    public static Action<int> OnEnemyTakeDamagse;
     void Start()
     {
         Health();
