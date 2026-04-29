@@ -13,9 +13,15 @@ public class Cat : MonoBehaviour
     //[SerializeField] private float _attackRange = 2f;
     [SerializeField] public int _damage = 20;
     [SerializeField] public float _attackCooldown = 1f;
-
-    private float _currentHealth = 100;
+    [SerializeField] private int _maxHealth = 100;
+    
+    private float _currentHealth;
     private float lastAttackTime;
+
+    void Start()
+    {
+        _currentHealth = _maxHealth;
+    }
 
     public void Attack()
     {

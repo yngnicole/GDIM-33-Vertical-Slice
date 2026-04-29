@@ -476,8 +476,9 @@ MonoBehaviour:
   _player: {fileID: 1650596039}
   _enemy: {fileID: 1884181623}
   rb: {fileID: 1334732623}
-  damage: 20
-  attackCooldown: 1
+  _damage: 20
+  _attackCooldown: 2
+  _maxHealth: 100
 --- !u!50 &1334732623
 Rigidbody2D:
   serializedVersion: 4
@@ -754,8 +755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ea1bd6dab60aa419bf30012a3b3fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
   _playerTransform: {fileID: 1650596039}
+  _speed: 5
 --- !u!114 &1650596042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,7 +989,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eccae1b527c1c94dab3db86cfa228bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  _cat: {fileID: 1334732621}
+  _maxHealth: 100
+  _attackRange: 2
+  _attackCoolDown: 2
+  _damage: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
