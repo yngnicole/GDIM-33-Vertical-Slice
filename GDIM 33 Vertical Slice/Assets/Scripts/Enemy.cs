@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.Composites;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,8 +14,8 @@ public class Enemy : MonoBehaviour
     
     private int _currentHealth;
     public int _damage = 10;
-    
 
+    public static Action<int> OnEnemyTakeDamage;
     void Start()
     {
         _currentHealth = _maxHealth;
@@ -38,6 +40,8 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+
+        OnEnemyTakeDamage?.Invoke(damage);
     }
 
     public void Attack()

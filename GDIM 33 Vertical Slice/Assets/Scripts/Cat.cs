@@ -18,6 +18,9 @@ public class Cat : MonoBehaviour
     public float _currentHealth;
     private float lastAttackTime;
 
+    public static Action<int> OnHeal;
+    public static Action<int> OnTakeDamage;
+
     private void OnEnable()
     {
         Items.OnConsumeMedicine += Heal;
@@ -61,6 +64,8 @@ public class Cat : MonoBehaviour
         {
             Die();
         }
+
+        OnTakeDamage?.Invoke(damage);
     }
 
     void Die()
@@ -76,6 +81,8 @@ public class Cat : MonoBehaviour
         {
             _currentHealth = _maxHealth;
         }
+
+        OnHeal?.Invoke(amount);
     }
 
 

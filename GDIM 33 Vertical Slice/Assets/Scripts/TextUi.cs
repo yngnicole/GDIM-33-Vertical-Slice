@@ -9,13 +9,26 @@ public class TextUi : MonoBehaviour
     [SerializeField] private TMP_Text _enemyText;
     [SerializeField] private TMP_Text _catText;
 
+    private void OnEnable()
+    {
+        Cat.OnHeal += UpdateCatHealth;
+        Cat.OnTakeDamage += UpdateCatHealth;
+        Enemy.OnEnemyTakeDamage += UpdateEnemyHealth;
+    }
+
+    private void OnDisable()
+    {
+        Cat.OnHeal -= UpdateCatHealth;
+        Cat.OnTakeDamage -= UpdateCatHealth;
+        Enemy.OnEnemyTakeDamage -= UpdateEnemyHealth;
+    }
     public void UpdateEnemyHealth(int Health)
     {
-        _enemyText = "Enemy Health: " + Health;
+        _enemyText.text = "Enemy Health: " + Health;
     }
 
     public void UpdateCatHealth(int Health)
     {
-        _catText = "Cat Health: " + Health;
+        _catText.text = "Cat Health: " + Health;
     }
 }
