@@ -8,11 +8,11 @@ public class Cat : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private Transform _enemy;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float _speed = 5f;
-    [SerializeField] private float _stopDistance = 1.5f;
-    [SerializeField] private float _attackRange = 2f;
+    //[SerializeField] private float _speed = 5f;
+    //[SerializeField] private float _stopDistance = 1.5f;
+    //[SerializeField] private float _attackRange = 2f;
     [SerializeField] public int damage = 20;
-    public float attackCooldown = 1f;
+    [SerializeField]public float attackCooldown = 1f;
     private float lastAttackTime;
 
     public static Action<Enemy, int>OnAttack;
@@ -49,7 +49,8 @@ public class Cat : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-    }*/
+    }
+    */
 
     public void Attack()
     {
@@ -60,7 +61,6 @@ public class Cat : MonoBehaviour
 
         if(Time.time - lastAttackTime > attackCooldown)
         {
-            //OnAttack?.Invoke();
            Enemy ghost = _enemy.GetComponent<Enemy>();
            
             if (ghost != null)

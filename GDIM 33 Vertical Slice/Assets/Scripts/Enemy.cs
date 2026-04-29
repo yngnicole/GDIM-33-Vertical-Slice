@@ -4,20 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth = 100;
+    [SerializeField] public int maxHealth = 100;
     private int currentHealth;
-
-    public System.Action OnDeath;
-
-    private void OnEnable()
-    {
-        //Cat.OnAttack += TakeDamage;
-    }
-
-    private void OnDisable()
-    {
-       // Cat.OnAttack -= TakeDamage;
-    }
 
     void Start()
     {
@@ -36,8 +24,6 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-
-        OnDeath?.Invoke();
         Destroy(gameObject);
     }
 }
