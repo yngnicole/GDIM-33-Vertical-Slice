@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
             Die();
         }
 
-        OnEnemyTakeDamage?.Invoke(damage);
+        OnEnemyTakeDamage?.Invoke(_currentHealth);
     }
 
     public void Attack()

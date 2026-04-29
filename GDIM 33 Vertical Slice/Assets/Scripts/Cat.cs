@@ -15,7 +15,7 @@ public class Cat : MonoBehaviour
     [SerializeField] public float _attackCooldown = 1f;
     [SerializeField] private int _maxHealth = 100;
     
-    public float _currentHealth;
+    public int _currentHealth;
     private float lastAttackTime;
 
     public static Action<int> OnHeal;
@@ -65,7 +65,7 @@ public class Cat : MonoBehaviour
             Die();
         }
 
-        OnTakeDamage?.Invoke(damage);
+        OnTakeDamage?.Invoke(_currentHealth);
     }
 
     void Die()
@@ -82,7 +82,7 @@ public class Cat : MonoBehaviour
             _currentHealth = _maxHealth;
         }
 
-        OnHeal?.Invoke(amount);
+        OnHeal?.Invoke(_currentHealth);
     }
 
 
