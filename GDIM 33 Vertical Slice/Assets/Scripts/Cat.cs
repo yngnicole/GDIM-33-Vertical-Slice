@@ -17,6 +17,7 @@ public class Cat : MonoBehaviour
 
     public static Action<Enemy, int>OnAttack;
 
+    /*
     void FixedUpdate()
     {
         if (_enemy == null) return;
@@ -48,7 +49,7 @@ public class Cat : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-    }
+    }*/
 
     public void Attack()
     {
