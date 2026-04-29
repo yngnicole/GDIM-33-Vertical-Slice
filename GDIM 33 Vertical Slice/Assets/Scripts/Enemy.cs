@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public static Action<int> OnEnemyTakeDamage;
     void Start()
     {
-        _currentHealth = _maxHealth;
+        Health();
     }
 
     void FixedUpdate()
@@ -65,6 +65,12 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+
+    void Health()
+    {
+        _currentHealth = _maxHealth;
+
     }
 }
 
