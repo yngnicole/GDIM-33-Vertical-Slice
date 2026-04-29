@@ -860,15 +860,15 @@ namespace Unity.VisualScripting.Generated.Aot
 	// Unity.VisualScripting.StateMachine.op_Inequality
 	// --------------- Plugin Stubs
 	// --------------- Asset Stubs
-	// UnityEngine.Transform.position
-	// UnityEngine.Vector2.magnitude
 	// UnityEngine.Rigidbody2D.velocity
 	// UnityEngine.Debug.Log
 	// UnityEngine.Vector2.zero
-	// UnityEngine.MonoBehaviour.Invoke
+	// UnityEngine.Transform.position
+	// UnityEngine.Vector2.magnitude
+	// UnityEngine.GameObject.GetComponent
 	// UnityEngine.Time.time
 	// Enemy.TakeDamage
-	// UnityEngine.GameObject.GetComponent
+	// UnityEngine.MonoBehaviour.Invoke
 	// UnityEngine.Vector2.Distance
 	// UnityEngine.Vector2..ctor
 	// UnityEngine.Input.GetAxisRaw
@@ -10730,28 +10730,6 @@ namespace Unity.VisualScripting.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
-		// UnityEngine.Transform.position
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void UnityEngine_Transform_position()
-		{
-			global::UnityEngine.Transform target = default(global::UnityEngine.Transform);
-			global::UnityEngine.Vector3 accessor = target.position;
-			target.position = default(global::UnityEngine.Vector3);
-			global::Unity.VisualScripting.InstancePropertyAccessor<UnityEngine.Transform, UnityEngine.Vector3> optimized = new global::Unity.VisualScripting.InstancePropertyAccessor<UnityEngine.Transform, UnityEngine.Vector3>(default(global::System.Reflection.PropertyInfo));
-			optimized.GetValue(default(global::UnityEngine.Transform));
-			optimized.SetValue(default(global::UnityEngine.Transform), default(global::UnityEngine.Vector3));
-		}
-		
-		// UnityEngine.Vector2.magnitude
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void UnityEngine_Vector2_magnitude()
-		{
-			global::UnityEngine.Vector2 target = default(global::UnityEngine.Vector2);
-			float accessor = target.magnitude;
-			global::Unity.VisualScripting.ReflectionPropertyAccessor optimized = new global::Unity.VisualScripting.ReflectionPropertyAccessor(default(global::System.Reflection.PropertyInfo));
-			optimized.GetValue(default(global::UnityEngine.Vector2));
-		}
-		
 		// UnityEngine.Rigidbody2D.velocity
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void UnityEngine_Rigidbody2D_velocity()
@@ -10784,16 +10762,37 @@ namespace Unity.VisualScripting.Generated.Aot
 			optimized.GetValue(null);
 		}
 		
-		// UnityEngine.MonoBehaviour.Invoke
+		// UnityEngine.Transform.position
 		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void UnityEngine_MonoBehaviour_Invoke()
+		public static void UnityEngine_Transform_position()
 		{
-			global::UnityEngine.MonoBehaviour target = default(global::UnityEngine.MonoBehaviour);
-			string arg0 = default(string);
-			float arg1 = default(float);
-			target.Invoke(arg0, arg1);
-			global::Unity.VisualScripting.InstanceActionInvoker<UnityEngine.MonoBehaviour, string, float> optimized = new global::Unity.VisualScripting.InstanceActionInvoker<UnityEngine.MonoBehaviour, string, float>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(default(global::UnityEngine.MonoBehaviour), arg0, arg1);
+			global::UnityEngine.Transform target = default(global::UnityEngine.Transform);
+			global::UnityEngine.Vector3 accessor = target.position;
+			target.position = default(global::UnityEngine.Vector3);
+			global::Unity.VisualScripting.InstancePropertyAccessor<UnityEngine.Transform, UnityEngine.Vector3> optimized = new global::Unity.VisualScripting.InstancePropertyAccessor<UnityEngine.Transform, UnityEngine.Vector3>(default(global::System.Reflection.PropertyInfo));
+			optimized.GetValue(default(global::UnityEngine.Transform));
+			optimized.SetValue(default(global::UnityEngine.Transform), default(global::UnityEngine.Vector3));
+		}
+		
+		// UnityEngine.Vector2.magnitude
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void UnityEngine_Vector2_magnitude()
+		{
+			global::UnityEngine.Vector2 target = default(global::UnityEngine.Vector2);
+			float accessor = target.magnitude;
+			global::Unity.VisualScripting.ReflectionPropertyAccessor optimized = new global::Unity.VisualScripting.ReflectionPropertyAccessor(default(global::System.Reflection.PropertyInfo));
+			optimized.GetValue(default(global::UnityEngine.Vector2));
+		}
+		
+		// UnityEngine.GameObject.GetComponent
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void UnityEngine_GameObject_GetComponent()
+		{
+			global::UnityEngine.GameObject target = default(global::UnityEngine.GameObject);
+			global::System.Type arg0 = default(global::System.Type);
+			target.GetComponent(arg0);
+			global::Unity.VisualScripting.InstanceFunctionInvoker<UnityEngine.GameObject, System.Type, UnityEngine.Component> optimized = new global::Unity.VisualScripting.InstanceFunctionInvoker<UnityEngine.GameObject, System.Type, UnityEngine.Component>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(default(global::UnityEngine.GameObject), arg0);
 			optimized.Invoke(default(object[]));
 		}
 		
@@ -10818,15 +10817,16 @@ namespace Unity.VisualScripting.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
-		// UnityEngine.GameObject.GetComponent
+		// UnityEngine.MonoBehaviour.Invoke
 		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void UnityEngine_GameObject_GetComponent()
+		public static void UnityEngine_MonoBehaviour_Invoke()
 		{
-			global::UnityEngine.GameObject target = default(global::UnityEngine.GameObject);
-			global::System.Type arg0 = default(global::System.Type);
-			target.GetComponent(arg0);
-			global::Unity.VisualScripting.InstanceFunctionInvoker<UnityEngine.GameObject, System.Type, UnityEngine.Component> optimized = new global::Unity.VisualScripting.InstanceFunctionInvoker<UnityEngine.GameObject, System.Type, UnityEngine.Component>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(default(global::UnityEngine.GameObject), arg0);
+			global::UnityEngine.MonoBehaviour target = default(global::UnityEngine.MonoBehaviour);
+			string arg0 = default(string);
+			float arg1 = default(float);
+			target.Invoke(arg0, arg1);
+			global::Unity.VisualScripting.InstanceActionInvoker<UnityEngine.MonoBehaviour, string, float> optimized = new global::Unity.VisualScripting.InstanceActionInvoker<UnityEngine.MonoBehaviour, string, float>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(default(global::UnityEngine.MonoBehaviour), arg0, arg1);
 			optimized.Invoke(default(object[]));
 		}
 		
