@@ -11,46 +11,11 @@ public class Cat : MonoBehaviour
     //[SerializeField] private float _speed = 5f;
     //[SerializeField] private float _stopDistance = 1.5f;
     //[SerializeField] private float _attackRange = 2f;
-    [SerializeField] public int damage = 20;
-    [SerializeField]public float attackCooldown = 1f;
+    [SerializeField] public int _damage = 20;
+    [SerializeField] public float _attackCooldown = 1f;
+
+    private float _currentHealth = 100;
     private float lastAttackTime;
-
-    public static Action<Enemy, int>OnAttack;
-
-    /*
-    void FixedUpdate()
-    {
-        if (_enemy == null) return;
-        float distanceToEnemy = Vector2.Distance(transform.position, _enemy.position);
-
-        // If enemy is close → attack
-        if (distanceToEnemy < _attackRange)
-        {
-            Attack();
-        }
-        else
-        {
-            FollowPlayer();
-        }
-    }
-
-    void FollowPlayer()
-    {
-        // Direction to player
-        Vector2 direction = _player.position - transform.position;
-        float distance = direction.magnitude;
-
-        // Only move if not too close
-        if (distance > _stopDistance)
-        {
-            rb.velocity = direction.normalized * _speed;
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
-    }
-    */
 
     public void Attack()
     {
@@ -59,17 +24,68 @@ public class Cat : MonoBehaviour
 
         if (_enemy == null) return;
 
-        if(Time.time - lastAttackTime > attackCooldown)
+        if(Time.time - lastAttackTime > _attackCooldown)
         {
            Enemy ghost = _enemy.GetComponent<Enemy>();
            
             if (ghost != null)
             {
-                ghost.TakeDamage(damage);
+                ghost.TakeDamage(_damage);
             }
            
 
             lastAttackTime = Time.time;
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+
+    /*
+   void FixedUpdate()
+   {
+       if (_enemy == null) return;
+       float distanceToEnemy = Vector2.Distance(transform.position, _enemy.position);
+
+       // If enemy is close → attack
+       if (distanceToEnemy < _attackRange)
+       {
+           Attack();
+       }
+       else
+       {
+           FollowPlayer();
+       }
+   }
+
+   void FollowPlayer()
+   {
+       // Direction to player
+       Vector2 direction = _player.position - transform.position;
+       float distance = direction.magnitude;
+
+       // Only move if not too close
+       if (distance > _stopDistance)
+       {
+           rb.velocity = direction.normalized * _speed;
+       }
+       else
+       {
+           rb.velocity = Vector2.zero;
+       }
+   }
+   */
 }

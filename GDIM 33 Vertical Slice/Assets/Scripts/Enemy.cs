@@ -4,21 +4,57 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public int maxHealth = 100;
-    private int currentHealth;
+    [SerializeField] Transform _cat;
+    [SerializeField] public int _maxHealth = 100;
+    [SerializeField] private float _attackRange = 2f;
+    
+    private float _lastAttackTime;
+    private float _attackCoolDown;
+    private int _currentHealth;
+    public int _damage = 10;
+    
 
     void Start()
     {
-        currentHealth = maxHealth;
+        _currentHealth = _maxHealth;
     }
 
+    void FixedUpdate()
+    {
+        if (_cat == null) return;
+        float distanceToCat = Vector2.Distance(transform.position, _cat.position);
+
+        // If cat is close, attack
+        if (distanceToCat < _attackRange)
+        {
+            Attack();
+        }
+    }
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        _currentHealth -= damage;
 
-        if (currentHealth <= 0)
+        if (_currentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    public void Attack()
+    {
+        if (_cat == null) return;
+
+        if (Time.time - _lastAttackTime > _attackCoolDown)
+        {
+            Cat cat = _cat.GetComponent<Cat>();
+
+            if (cat != null)
+            {
+                cat.TakeDamage(_damage);
+            }
+
+
+            _lastAttackTime = Time.time;
         }
     }
 

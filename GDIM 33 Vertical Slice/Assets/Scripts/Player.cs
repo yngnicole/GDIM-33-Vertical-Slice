@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speed;
     [SerializeField] private Transform _playerTransform;
+    [SerializeField] private float _speed;
+   
     private void Update()
     {
         //movement with WASD and arrow keys
