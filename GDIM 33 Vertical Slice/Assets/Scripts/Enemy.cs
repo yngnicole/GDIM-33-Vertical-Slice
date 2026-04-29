@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] Transform _cat;
     [SerializeField] public int _maxHealth = 100;
-    [SerializeField] private float _attackRange = 2f;
+    [SerializeField] private float _attackRange = 5f;
     [SerializeField] private float _attackCoolDown;
     private float _lastAttackTime;
     
