@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d268571a37395ba46b4902357bc80ab1, type: 3}
   m_Name: Medicine
   m_EditorClassIdentifier: 
-  _plusHealth: 0
-  _plusHunger: 0
-  _powerUp: 0
+  plusHealth: 20
+  plusHunger: 0
+  powerUp: 0
+  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

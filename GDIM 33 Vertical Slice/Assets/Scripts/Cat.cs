@@ -76,6 +76,7 @@ public class Cat : MonoBehaviour
     public void Heal(int amount)
     {
         _currentHealth += amount;
+        Debug.Log("health worked");
 
         if (_currentHealth > _maxHealth)
         {

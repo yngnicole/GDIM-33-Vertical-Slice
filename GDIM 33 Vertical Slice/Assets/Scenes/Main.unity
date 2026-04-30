@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _medicineStat: 10
+  _scriptableObject: {fileID: 11400000, guid: 5c386557b66b6fa4a819c4154a1a4fbe, type: 2}
 --- !u!1 &198390652
 GameObject:
   m_ObjectHideFlags: 0

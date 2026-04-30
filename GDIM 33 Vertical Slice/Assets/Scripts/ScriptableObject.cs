@@ -7,8 +7,8 @@ using UnityEngine;
 public class ScriptableObjectItem : ScriptableObject
 
 {
-    public int _plusHealth;
-    public int _plusHunger;
-    public int _powerUp;
+    public int plusHealth;
+    public int plusHunger;
+    public int powerUp;
     public Sprite icon;
 }
