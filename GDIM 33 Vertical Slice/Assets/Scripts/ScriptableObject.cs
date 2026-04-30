@@ -10,4 +10,5 @@ public class ScriptableObjectItem : ScriptableObject
     public int _plusHealth;
     public int _plusHunger;
     public int _powerUp;
+    public Sprite icon;
 }
