@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    [SerializeField] private int _medicineStat = 10;
+    //[SerializeField] private int _medicineStat = 10;
     [SerializeField] ScriptableObjectItem _scriptableObject;
 
     public static Action<int> OnConsumeMedicine;
