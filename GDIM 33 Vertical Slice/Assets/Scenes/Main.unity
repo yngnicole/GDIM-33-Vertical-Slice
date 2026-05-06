@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13f8dbb065f79942b99a5dee29f67f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _medicineStat: 10
   _scriptableObject: {fileID: 11400000, guid: 5c386557b66b6fa4a819c4154a1a4fbe, type: 2}
 --- !u!1 &198390652
 GameObject:
@@ -893,11 +892,11 @@ Transform:
   m_GameObject: {fileID: 1334732618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.95, y: -2.9468043, z: 0}
-  m_LocalScale: {x: 0.63490987, y: 0.63490987, z: 0.63490987}
+  m_LocalPosition: {x: -3.9867992, y: -2.73, z: 0}
+  m_LocalScale: {x: 0.19822055, y: 0.19822055, z: 0.19822055}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1650596039}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1334732622
 MonoBehaviour:
@@ -980,6 +979,7 @@ MonoBehaviour:
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Enemy","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"attackRange","value":{"$content":2.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"followDistance","value":{"$content":2,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"detectionRange","value":{"$content":10.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1650596036}
@@ -1310,7 +1310,6 @@ RectTransform:
   m_LocalScale: {x: 0.31220266, y: 0.31220266, z: 0.31220266}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1334732621}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1714,3 +1713,4 @@ SceneRoots:
   - {fileID: 1884181623}
   - {fileID: 1650596039}
   - {fileID: 26632480}
+  - {fileID: 1334732621}
