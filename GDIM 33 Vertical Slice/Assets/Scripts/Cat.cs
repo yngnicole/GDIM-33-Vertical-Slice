@@ -14,12 +14,30 @@ public class Cat : MonoBehaviour
     [SerializeField] public int _damage = 20;
     [SerializeField] public float _attackCooldown = 1f;
     [SerializeField] private int _maxHealth = 100;
-    
+
+    [SerializeField] private float followDistance = 2f;
+    [SerializeField] private float detectionRange = 5f;
+    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private float stopDistance = 2f;
+
     public int _currentHealth;
     private float lastAttackTime;
 
     public static Action<int> OnHeal;
     public static Action<int> OnTakeDamage;
+
+
+    private void OnDrawGizmos()
+    {
+        Debug.Log($"Detection: {detectionRange} | Attack: {attackRange}");
+
+        Gizmos.matrix = Matrix4x4.identity;
+
+        Gizmos.DrawSphere(_player.position, followDistance);
+        Gizmos.DrawSphere(_enemy.position, detectionRange);
+        Gizmos.DrawSphere(_enemy.position, attackRange);
+        Gizmos.DrawSphere(_enemy.position, stopDistance);
+    }
 
     private void OnEnable()
     {
