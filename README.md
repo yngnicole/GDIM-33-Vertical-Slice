@@ -20,7 +20,20 @@ So if the distance from the enemy is not less than attackRange, the transition w
 
 
 ## Milestone 2 Devlog
-Milestone 2 Devlog goes here.
+# 1
+Big steps:
+My complicated gameplay feature is a powerup item that increases attack stat on the Cat GameObject. 
+- Create a scriptableObject that has the increase attack stat
+- Implement how the scriptableObject will act on the Player and Cat through coding. 
+- Text indication that the powerup item worked
+Smaller steps:
+- Create a variable on the scriptableObject script called onPowerup
+- Create a method in the Item script that increases attack damage that is called from the SO script when the powerup Item is consumed
+- Hook up the item script onto the powerup item in Unity. 
+- Create text in Unity that displays attack damage
+- Update attack damage text when powerup Item is consumed to check if the powerup worked. 
+
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
