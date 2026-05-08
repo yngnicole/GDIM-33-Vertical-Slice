@@ -7,21 +7,40 @@ public class Items : MonoBehaviour
 {
     //[SerializeField] private int _medicineStat = 10;
     [SerializeField] ScriptableObjectItem _scriptableObject;
+    [SerializeField] float _checkRadius = 2.0f;
+    [SerializeField] LayerMask _catLayer;
 
     public static Action<int> OnConsumeMedicine;
+    private bool _playerIsNear;
 
-
-    private void OnEnable()
+    private void Update()
     {
-        
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
+        if(_playerIsNear && Input.GetKeyDown(KeyCode.V))
         {
-            ConsumeMedicine();
+            
+            Collider2D  catCollider = Physics2D.OverlapCircle(transform.position, _checkRadius, _catLayer);
+
+            if (catCollider != null)
+            {
+                ConsumeMedicine();
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _playerIsNear = true;
         }
 
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _playerIsNear = false;
+        }
     }
 
     public void ConsumeMedicine()

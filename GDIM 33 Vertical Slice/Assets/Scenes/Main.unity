@@ -270,6 +270,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObject: {fileID: 11400000, guid: 5c386557b66b6fa4a819c4154a1a4fbe, type: 2}
+  _checkRadius: 2
+  _catLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &198390652
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +409,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObject: {fileID: 11400000, guid: 5c386557b66b6fa4a819c4154a1a4fbe, type: 2}
+  _checkRadius: 2
+  _catLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!212 &376133409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -913,7 +921,7 @@ GameObject:
   - component: {fileID: 1334732623}
   - component: {fileID: 1334732625}
   - component: {fileID: 1334732624}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1341,7 @@ GameObject:
   - component: {fileID: 1650596045}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1873,6 +1881,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObject: {fileID: 11400000, guid: 9c3779b0e4f13f146a63470f266c305b, type: 2}
+  _checkRadius: 2
+  _catLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &2110931283
 GameObject:
   m_ObjectHideFlags: 0
