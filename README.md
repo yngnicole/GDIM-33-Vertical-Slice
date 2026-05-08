@@ -20,7 +20,7 @@ So if the distance from the enemy is not less than attackRange, the transition w
 
 
 ## Milestone 2 Devlog
-# 1
+### 1
 Big steps:
 My complicated gameplay feature is a powerup item that increases attack stat on the Cat GameObject. 
 - Create a scriptableObject that has the increase attack stat
