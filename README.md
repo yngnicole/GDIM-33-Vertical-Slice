@@ -39,7 +39,8 @@ Smaller steps:
 ### 2
 The task steps break-down activity helped me build a feature for this Milestone because I was able to break it into numerous small steps that I could check after each step whether or 
 not I implemented it correctly. Also it made building the features feel less overwelming. To improve my break-downs to be more helpful in the future, I would try to be even more 
-specific as I had some steps that I overlooked while I was doing the steps. Canvas is down so I forgot what the quiz question from W5 was.
+specific as I had some steps that I overlooked while I was doing the steps. The quiz question form W5 also helped me implement my chosen Unity system because it made me think and
+plan where I would be using ScriptableObject in my game.
 
 ### 3 
 I am bridging visual scripting and code in my game through my state machine. On my Cat gameObject, it has the Attacking state graph. In the Attacking state graph,
