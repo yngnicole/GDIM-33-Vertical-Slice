@@ -736,13 +736,11 @@ MonoBehaviour:
   _enemy: {fileID: 1884181623}
   rb: {fileID: 1334732623}
   _damage: 20
-  _attackCooldown: 2
+  _attackCooldown: 1.5
   _maxHealth: 100
-  followDistance: 2
-  detectionRange: 5
-  attackRange: 2
-  stopDistance: 2
+  _spriteRenderer: {fileID: 1334732620}
   _currentHealth: 0
+  flashDuration: 0.1
 --- !u!50 &1334732623
 Rigidbody2D:
   serializedVersion: 4
@@ -1577,7 +1575,9 @@ MonoBehaviour:
   _maxHealth: 100
   _attackRange: 2
   _attackCoolDown: 2
-  _damage: 15
+  _spriteRenderer: {fileID: 1884181622}
+  _damage: 25
+  flashDuration: 0.1
 --- !u!1 &2078015766
 GameObject:
   m_ObjectHideFlags: 0

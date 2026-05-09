@@ -42,7 +42,6 @@ public class Cat : MonoBehaviour
         //Gizmos.DrawSphere(_enemy.position, stopDistance);
     }
     */
-
     private void OnEnable()
     {
         Items.OnConsumeMedicine += Heal;
@@ -57,6 +56,7 @@ public class Cat : MonoBehaviour
     void Start()
     {
         _currentHealth = _maxHealth;
+        _originalColor = _spriteRenderer.color;
 
         OnHeal?.Invoke(_currentHealth);
         OnPowerUp?.Invoke(_damage);
