@@ -28,11 +28,12 @@ My complicated gameplay feature is a powerup item that increases attack stat on 
 - Text indication that the powerup item worked
 
 Smaller steps:
-- Create a variable on the scriptableObject script called onPowerup
-- Create a method in the Item script that increases attack damage that is called from the SO script when the powerup Item is consumed
+- Create a variable on the scriptableObject script called onPowerUp
+- Create a method in the Item script that calls the onPowerUp variable from the SO script and increases attack damage when powerup Item is consumed
+- In the method, implement that the powerup can only be used within a certain duration. 
 - Hook up the item script onto the powerup item in Unity. 
 - Create text in Unity that displays attack damage
-- Update attack damage text when powerup Item is consumed to check if the powerup worked. 
+- Update attack damage text when powerup Item is consumed to check if the powerup works and if it the buff sucessfully stops after a while.
 
 
 ## Milestone 3 Devlog
