@@ -26,6 +26,7 @@ My complicated gameplay feature is a powerup item that increases attack stat on 
 - Create a scriptableObject that has the increase attack stat
 - Implement how the scriptableObject will act on the Player and Cat through coding. 
 - Text indication that the powerup item worked
+
 Smaller steps:
 - Create a variable on the scriptableObject script called onPowerup
 - Create a method in the Item script that increases attack damage that is called from the SO script when the powerup Item is consumed
