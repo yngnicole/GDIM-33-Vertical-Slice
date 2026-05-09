@@ -10,15 +10,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] public int _maxHealth = 100;
     [SerializeField] private float _attackRange = 5f;
     [SerializeField] private float _attackCoolDown;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+
     private float _lastAttackTime;
-    
     private int _currentHealth;
     public int _damage = 10;
+    private Color _originalColor;
+    public float flashDuration = 0.1f;
 
     public static Action<int> OnEnemyTakeDamage;
     void Start()
     {
         Health();
+        _originalColor = _spriteRenderer.color;
     }
 
     void FixedUpdate()
@@ -35,6 +39,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        StartCoroutine(FlashRed());
 
         if (_currentHealth <= 0)
         {
@@ -72,5 +77,14 @@ public class Enemy : MonoBehaviour
         _currentHealth = _maxHealth;
 
     }
+
+
+    private IEnumerator FlashRed()
+    {
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(flashDuration);
+        _spriteRenderer.color = _originalColor;
+    }
+
 }
 

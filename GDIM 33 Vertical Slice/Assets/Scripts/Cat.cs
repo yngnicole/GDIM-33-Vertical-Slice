@@ -14,31 +14,34 @@ public class Cat : MonoBehaviour
     [SerializeField] public int _damage = 20;
     [SerializeField] public float _attackCooldown = 1f;
     [SerializeField] private int _maxHealth = 100;
-
-    [SerializeField] private float followDistance = 2f;
-    [SerializeField] private float detectionRange = 5f;
-    [SerializeField] private float attackRange = 5f;
-    [SerializeField] private float stopDistance = 2f;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     public int _currentHealth;
     private float lastAttackTime;
+    private Color _originalColor;
+    public float flashDuration = 0.1f;
 
     public static Action<int> OnHeal;
     public static Action<int> OnTakeDamage;
     public static Action<int> OnPowerUp;
 
+    //[SerializeField] private float followDistance = 2f;
+    //[SerializeField] private float detectionRange = 5f;
+    //[SerializeField] private float attackRange = 5f;
+    //[SerializeField] private float stopDistance = 2f;
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
-        Debug.Log($"Detection: {detectionRange} | Attack: {attackRange}");
+        //Debug.Log($"Detection: {detectionRange} | Attack: {attackRange}");
 
-        Gizmos.matrix = Matrix4x4.identity;
+        //Gizmos.matrix = Matrix4x4.identity;
 
-        Gizmos.DrawSphere(_player.position, followDistance);
+        //Gizmos.DrawSphere(_player.position, followDistance);
         //Gizmos.DrawSphere(_enemy.position, detectionRange);
         //Gizmos.DrawSphere(_enemy.position, attackRange);
         //Gizmos.DrawSphere(_enemy.position, stopDistance);
     }
+    */
 
     private void OnEnable()
     {
@@ -83,6 +86,7 @@ public class Cat : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        StartCoroutine(FlashRed());
 
         if (_currentHealth <= 0)
         {
@@ -127,8 +131,12 @@ public class Cat : MonoBehaviour
         OnPowerUp?.Invoke(_damage);
     }
 
-
-
+    private IEnumerator FlashRed()
+    {
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(flashDuration);
+        _spriteRenderer.color = _originalColor;
+    }
 
 
     /*

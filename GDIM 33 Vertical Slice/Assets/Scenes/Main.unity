@@ -737,7 +737,7 @@ MonoBehaviour:
   rb: {fileID: 1334732623}
   _damage: 20
   _attackCooldown: 2
-  _maxHealth: 1000
+  _maxHealth: 100
   followDistance: 2
   detectionRange: 5
   attackRange: 2
@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cat: {fileID: 1334732621}
-  _maxHealth: 1000
+  _maxHealth: 100
   _attackRange: 2
   _attackCoolDown: 2
   _damage: 15
