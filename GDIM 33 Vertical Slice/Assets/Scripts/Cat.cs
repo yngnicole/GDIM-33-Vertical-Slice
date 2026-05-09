@@ -88,6 +88,11 @@ public class Cat : MonoBehaviour
         _currentHealth -= damage;
         StartCoroutine(FlashRed());
 
+        if (_currentHealth < 0)
+        {
+            _currentHealth = 0;
+        }
+
         if (_currentHealth <= 0)
         {
             Die();
