@@ -45,9 +45,12 @@ specific as I had some steps that I overlooked while I was doing the steps. Canv
 I am bridging visual scripting and code in my game through my state machine. On my Cat gameObject, it has the Attacking state graph. In the Attacking state graph,
 I call upon a C# method Attack() from my Cat script. This C# method Attack() serves in my architecture as the controller part of the Cat while the state graph handles the transition 
 and movement of the cat. 
+<img width="1364" height="733" alt="Screenshot 2026-05-08 182111" src="https://github.com/user-attachments/assets/dd052b9b-2fbf-45f0-aed5-f3876559c37d" />
+
 
 Explain how you bridged visual scripting and code in your game. Are you calling a custom event from a Graph from a C# method, or vice versa, 
-and what purpose does this serve in your architecture? Make sure to name the C# script(s) involved, and attach a screenshot of the relevant Graph.
+and what purpose does this serve in your architecture? Make sure to name t
+he C# script(s) involved, and attach a screenshot of the relevant Graph.
 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
