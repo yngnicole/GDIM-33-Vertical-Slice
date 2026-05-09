@@ -46,8 +46,8 @@ I am bridging visual scripting and code in my game through my state machine. On 
 I call upon a C# method Attack() from my Cat script. This C# method Attack() serves in my architecture as the controller part of the Cat while the state graph handles the transition 
 and movement of the cat. 
 
-Explain how you bridged visual scripting and code in your game. Are you calling a custom event from a Graph from a C# method, or vice versa, 
-and what purpose does this serve in your architecture? Make sure to name the C# script(s) involved, and attach a screenshot of the relevant Graph.
+### 4
+I want to be graded on ScriptableObjects as my Unity system. The scriptableObjects are the items on the map (The potion and the bowl).
 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
