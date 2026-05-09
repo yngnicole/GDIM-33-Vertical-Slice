@@ -36,6 +36,18 @@ Smaller steps:
 - Create text in Unity that displays attack damage
 - Update attack damage text when powerup Item is consumed to check if the powerup works and if it the buff sucessfully stops after a while.
 
+### 2
+The task steps break-down activity helped me build a feature for this Milestone because I was able to break it into numerous small steps that I could check after each step whether or 
+not I implemented it correctly. Also it made building the features feel less overwelming. To improve my break-downs to be more helpful in the future, I would try to be even more 
+specific as I had some steps that I overlooked while I was doing the steps. Canvas is down so I forgot what the quiz question from W5 was.
+
+### 3 
+I am bridging visual scripting and code in my game through my state machine. On my Cat gameObject, it has the Attacking state graph. In the Attacking state graph,
+I call upon a C# method Attack() from my Cat script. This C# method Attack() serves in my architecture as the controller part of the Cat while the state graph handles the transition 
+and movement of the cat. 
+
+Explain how you bridged visual scripting and code in your game. Are you calling a custom event from a Graph from a C# method, or vice versa, 
+and what purpose does this serve in your architecture? Make sure to name the C# script(s) involved, and attach a screenshot of the relevant Graph.
 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
