@@ -25,6 +25,7 @@ public class Cat : MonoBehaviour
 
     public static Action<int> OnHeal;
     public static Action<int> OnTakeDamage;
+    public static Action<int> OnPowerUp;
 
 
     private void OnDrawGizmos()
@@ -42,15 +43,20 @@ public class Cat : MonoBehaviour
     private void OnEnable()
     {
         Items.OnConsumeMedicine += Heal;
+        Items.OnConsumePowerUp += PowerUp;
     }
 
     private void OnDisable()
     {
         Items.OnConsumeMedicine -= Heal;
+        Items.OnConsumePowerUp -= PowerUp;
     }
     void Start()
     {
         _currentHealth = _maxHealth;
+
+        OnHeal?.Invoke(_currentHealth);
+        OnPowerUp?.Invoke(_damage);
     }
 
     public void Attack()
@@ -103,6 +109,26 @@ public class Cat : MonoBehaviour
 
         OnHeal?.Invoke(_currentHealth);
     }
+    
+    public void PowerUp(int amount, float duration)
+    {
+        StartCoroutine(PowerUpRoutine(amount, duration));
+    }
+
+    private IEnumerator PowerUpRoutine(int amount, float duration)
+    {
+        _damage += amount;
+        OnPowerUp?.Invoke(_damage);
+
+        yield return new WaitForSeconds(duration);
+
+        _damage -= amount;
+        if (_damage <= 20) _damage = 20;
+        OnPowerUp?.Invoke(_damage);
+    }
+
+
+
 
 
     /*

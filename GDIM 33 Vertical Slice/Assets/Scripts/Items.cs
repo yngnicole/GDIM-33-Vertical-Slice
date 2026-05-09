@@ -11,6 +11,7 @@ public class Items : MonoBehaviour
     [SerializeField] LayerMask _catLayer;
 
     public static Action<int> OnConsumeMedicine;
+    public static Action<int, float> OnConsumePowerUp;
     private bool _playerIsNear;
 
     private void Update()
@@ -23,6 +24,7 @@ public class Items : MonoBehaviour
             if (catCollider != null)
             {
                 ConsumeMedicine();
+                ConsumePowerUp();
             }
         }
     }
@@ -48,6 +50,13 @@ public class Items : MonoBehaviour
         OnConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
         Debug.Log("invoked");
         
+        gameObject.SetActive(false);
+    }
+
+    public void ConsumePowerUp()
+    {
+        OnConsumePowerUp?.Invoke(_scriptableObject.plusPowerUp, _scriptableObject.duration);
+
         gameObject.SetActive(false);
     }
 }

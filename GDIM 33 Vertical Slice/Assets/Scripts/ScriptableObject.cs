@@ -9,6 +9,7 @@ public class ScriptableObjectItem : ScriptableObject
 {
     public int plusHealth;
     public int plusHunger;
-    public int powerUp;
+    public int plusPowerUp;
+    public float duration;
     public Sprite icon;
 }

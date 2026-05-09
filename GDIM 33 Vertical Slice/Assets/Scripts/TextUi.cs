@@ -7,12 +7,15 @@ using UnityEngine;
 public class TextUi : MonoBehaviour
 {
     [SerializeField] private TMP_Text _enemyText;
-    [SerializeField] private TMP_Text _catText;
+    [SerializeField] private TMP_Text _catHealthText;
+    [SerializeField] private TMP_Text _catAttackText;
 
     private void OnEnable()
     {
         Cat.OnHeal += UpdateCatHealth;
         Cat.OnTakeDamage += UpdateCatHealth;
+        Cat.OnPowerUp += UpdateCatAttack;
+
         Enemy.OnEnemyTakeDamage += UpdateEnemyHealth;
     }
 
@@ -20,6 +23,8 @@ public class TextUi : MonoBehaviour
     {
         Cat.OnHeal -= UpdateCatHealth;
         Cat.OnTakeDamage -= UpdateCatHealth;
+        Cat.OnPowerUp -= UpdateCatAttack;
+
         Enemy.OnEnemyTakeDamage -= UpdateEnemyHealth;
     }
     public void UpdateEnemyHealth(int Health)
@@ -29,6 +34,11 @@ public class TextUi : MonoBehaviour
 
     public void UpdateCatHealth(int Health)
     {
-        _catText.text = "Cat Health: " + Health;
+        _catHealthText.text = "Cat Health: " + Health;
+    }
+
+    public void UpdateCatAttack(int Attack)
+    {
+        _catAttackText.text = "Cat Attack Damage: " + Attack;
     }
 }
