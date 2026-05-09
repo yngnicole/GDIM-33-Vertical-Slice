@@ -47,6 +47,8 @@ I call upon a C# method Attack() from my Cat script. This C# method Attack() ser
 and movement of the cat. 
 <img width="1364" height="733" alt="Screenshot 2026-05-08 182111" src="https://github.com/user-attachments/assets/b73ca0ba-6ece-4b28-92db-b318283b6b21" />
 
+### 4
+I want to be graded on ScriptableObjects as my Unity system. The scriptableObjects are the items on the map (The potion and the bowl).
 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
