@@ -45,6 +45,8 @@ specific as I had some steps that I overlooked while I was doing the steps. Canv
 I am bridging visual scripting and code in my game through my state machine. On my Cat gameObject, it has the Attacking state graph. In the Attacking state graph,
 I call upon a C# method Attack() from my Cat script. This C# method Attack() serves in my architecture as the controller part of the Cat while the state graph handles the transition 
 and movement of the cat. 
+<img width="1364" height="733" alt="Screenshot 2026-05-08 182111" src="https://github.com/user-attachments/assets/b73ca0ba-6ece-4b28-92db-b318283b6b21" />
+
 
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
