@@ -15,5 +15,5 @@ MonoBehaviour:
   plusHealth: 0
   plusHunger: 0
   plusPowerUp: 20
-  duration: 5
+  duration: 10
   icon: {fileID: 0}

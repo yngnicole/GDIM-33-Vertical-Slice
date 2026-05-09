@@ -35,9 +35,9 @@ public class Cat : MonoBehaviour
         Gizmos.matrix = Matrix4x4.identity;
 
         Gizmos.DrawSphere(_player.position, followDistance);
-        Gizmos.DrawSphere(_enemy.position, detectionRange);
-        Gizmos.DrawSphere(_enemy.position, attackRange);
-        Gizmos.DrawSphere(_enemy.position, stopDistance);
+        //Gizmos.DrawSphere(_enemy.position, detectionRange);
+        //Gizmos.DrawSphere(_enemy.position, attackRange);
+        //Gizmos.DrawSphere(_enemy.position, stopDistance);
     }
 
     private void OnEnable()
