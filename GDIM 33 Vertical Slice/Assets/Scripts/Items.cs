@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    //[SerializeField] private int _medicineStat = 10;
     [SerializeField] ScriptableObjectItem _scriptableObject;
-    [SerializeField] float _checkRadius = 2.0f;
     [SerializeField] LayerMask _catLayer;
+    [SerializeField] float _checkRadius = 2.0f;
+    
+    private bool _playerIsNear;
 
     public static Action<int> OnConsumeMedicine;
     public static Action<int, float> OnConsumePowerUp;
-    private bool _playerIsNear;
 
     private void Update()
     {
-        if(_playerIsNear && Input.GetKeyDown(KeyCode.V))
+        if (_playerIsNear && Input.GetKeyDown(KeyCode.V))
         {
-            
-            Collider2D  catCollider = Physics2D.OverlapCircle(transform.position, _checkRadius, _catLayer);
+
+            Collider2D catCollider = Physics2D.OverlapCircle(transform.position, _checkRadius, _catLayer);
 
             if (catCollider != null)
             {
@@ -27,7 +27,30 @@ public class Items : MonoBehaviour
                 ConsumePowerUp();
             }
         }
+
+        else if (Input.GetKey(KeyCode.G))
+        {
+            ConsumeMedicine();
+            ConsumePowerUp();
+        }
+
+
     }
+
+    public void ConsumeMedicine()
+    {
+        OnConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+        
+        gameObject.SetActive(false);
+    }
+
+    public void ConsumePowerUp()
+    {
+        OnConsumePowerUp?.Invoke(_scriptableObject.plusPowerUp, _scriptableObject.duration);
+
+        gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -43,20 +66,5 @@ public class Items : MonoBehaviour
         {
             _playerIsNear = false;
         }
-    }
-
-    public void ConsumeMedicine()
-    {
-        OnConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
-        Debug.Log("invoked");
-        
-        gameObject.SetActive(false);
-    }
-
-    public void ConsumePowerUp()
-    {
-        OnConsumePowerUp?.Invoke(_scriptableObject.plusPowerUp, _scriptableObject.duration);
-
-        gameObject.SetActive(false);
     }
 }

@@ -8,13 +8,10 @@ public class Cat : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private Transform _enemy;
     [SerializeField] private Rigidbody2D rb;
-    //[SerializeField] private float _speed = 5f;
-    //[SerializeField] private float _stopDistance = 1.5f;
-    //[SerializeField] private float _attackRange = 2f;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] public int _damage = 20;
     [SerializeField] public float _attackCooldown = 1f;
     [SerializeField] private int _maxHealth = 100;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     public int _currentHealth;
     private float lastAttackTime;
@@ -24,24 +21,6 @@ public class Cat : MonoBehaviour
     public static Action<int> OnHeal;
     public static Action<int> OnTakeDamage;
     public static Action<int> OnPowerUp;
-
-    //[SerializeField] private float followDistance = 2f;
-    //[SerializeField] private float detectionRange = 5f;
-    //[SerializeField] private float attackRange = 5f;
-    //[SerializeField] private float stopDistance = 2f;
-
-    /*private void OnDrawGizmos()
-    {
-        //Debug.Log($"Detection: {detectionRange} | Attack: {attackRange}");
-
-        //Gizmos.matrix = Matrix4x4.identity;
-
-        //Gizmos.DrawSphere(_player.position, followDistance);
-        //Gizmos.DrawSphere(_enemy.position, detectionRange);
-        //Gizmos.DrawSphere(_enemy.position, attackRange);
-        //Gizmos.DrawSphere(_enemy.position, stopDistance);
-    }
-    */
     private void OnEnable()
     {
         Items.OnConsumeMedicine += Heal;
@@ -64,8 +43,6 @@ public class Cat : MonoBehaviour
 
     public void Attack()
     {
-        // Stop movement
-        //rb.velocity = Vector2.zero;
 
         if (_enemy == null) return;
 
@@ -109,7 +86,6 @@ public class Cat : MonoBehaviour
     public void Heal(int amount)
     {
         _currentHealth += amount;
-        Debug.Log("health worked");
 
         if (_currentHealth > _maxHealth)
         {
@@ -144,7 +120,11 @@ public class Cat : MonoBehaviour
     }
 
 
-    /*
+    /* in state machine now 
+    //[SerializeField] private float _speed = 5f;
+    //[SerializeField] private float _stopDistance = 1.5f;
+    //[SerializeField] private float _attackRange = 2f;
+
    void FixedUpdate()
    {
        if (_enemy == null) return;
