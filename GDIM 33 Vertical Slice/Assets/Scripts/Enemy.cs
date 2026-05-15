@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public int _maxHealth = 100;
     [SerializeField] private float _attackRange = 5f;
     [SerializeField] private float _attackCoolDown;
+    [SerializeField] private int _damage = 10;
 
     [Header("Audio")]
     [SerializeField] private AudioSource _enemyAudioSource;
@@ -22,9 +23,9 @@ public class Enemy : MonoBehaviour
 
     private float _lastAttackTime;
     private int _currentHealth;
-    public int _damage = 10;
+    
     private Color _originalColor;
-    public float flashDuration = 0.1f;
+    private float flashDuration = 0.1f;
 
     public static Action<int> OnEnemyTakeDamage;
     void Start()
@@ -46,8 +47,10 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
+        _currentHealth -= damage;   
         StartCoroutine(FlashRed());
+
+        _enemyAudioSource.PlayOneShot(_enemyAudioClip);
 
         if (_currentHealth <= 0)
         {
