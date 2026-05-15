@@ -48,6 +48,7 @@ public class Cat : MonoBehaviour
 
         OnHeal?.Invoke(_currentHealth);
         OnPowerUp?.Invoke(_damage);
+     
     }
 
     public void Attack()
@@ -67,6 +68,8 @@ public class Cat : MonoBehaviour
 
             _lastAttackTime = Time.time;
         }
+
+        _catAudioSource.PlayOneShot(_catAudioClipAttack);
     }
 
     public void TakeDamage(int damage)
@@ -83,6 +86,8 @@ public class Cat : MonoBehaviour
         {
             Die();
         }
+
+        _catAudioSource.PlayOneShot(_catAudioClipTakeDmg);
 
         OnTakeDamage?.Invoke(_currentHealth);
     }
@@ -127,7 +132,6 @@ public class Cat : MonoBehaviour
         yield return new WaitForSeconds(flashDuration);
         _spriteRenderer.color = _originalColor;
     }
-
 
     /* in state machine now 
     //[SerializeField] private float _speed = 5f;
