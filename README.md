@@ -58,4 +58,4 @@ Milestone 4 Devlog goes here.
 ## Final Devlog
 Final Devlog goes here.
 ## Open-source assets
-- Cite any external assets used here!
+[Cat Attack Sound](https://uppbeat.io/sfx/cat-threatening-growl/13302/32826)
