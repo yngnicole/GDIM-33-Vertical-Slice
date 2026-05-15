@@ -25,14 +25,20 @@ public class Items : MonoBehaviour
 
             if (catCollider != null)
             {
-                CatConsumeMedicine();
-                ConsumePowerUp();
+                //CatConsumeMedicine();
+                //ConsumePowerUp();
+                OnCatConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+                OnConsumePowerUp?.Invoke(_scriptableObject.plusPowerUp, _scriptableObject.duration);
+
+                gameObject.SetActive(false);
             }
         }
 
         else if (_playerIsNear && Input.GetKeyDown(KeyCode.G))
         {
-            PlayerConsumeMedicine();
+            //PlayerConsumeMedicine();
+            OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+            gameObject.SetActive(false);
         }
 
 
