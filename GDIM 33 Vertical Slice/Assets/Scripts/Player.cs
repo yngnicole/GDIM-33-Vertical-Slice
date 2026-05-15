@@ -87,6 +87,8 @@ public class Player : MonoBehaviour
             if (ghost != null)
             {
                 ghost.TakeDamage(_attackDamage);
+
+                _playerAudioSource.PlayOneShot(_playerAudioClipAttack);
             }
 
             _lastAttackTime = Time.time;

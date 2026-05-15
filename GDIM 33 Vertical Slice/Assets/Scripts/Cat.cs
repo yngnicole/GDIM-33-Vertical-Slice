@@ -18,7 +18,6 @@ public class Cat : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource _catAudioSource;
-    [SerializeField] private AudioClip _catAudioClipTakeDmg;
     [SerializeField] private AudioClip _catAudioClipAttack;
 
 
@@ -63,13 +62,14 @@ public class Cat : MonoBehaviour
             if (ghost != null)
             {
                 ghost.TakeDamage(_damage);
+                _catAudioSource.PlayOneShot(_catAudioClipAttack);
+
             }
            
-
             _lastAttackTime = Time.time;
         }
 
-        _catAudioSource.PlayOneShot(_catAudioClipAttack);
+        
     }
 
     public void TakeDamage(int damage)
@@ -86,8 +86,6 @@ public class Cat : MonoBehaviour
         {
             Die();
         }
-
-        _catAudioSource.PlayOneShot(_catAudioClipTakeDmg);
 
         OnTakeDamage?.Invoke(_currentHealth);
     }
