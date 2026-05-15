@@ -1653,7 +1653,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2068,10 +2068,9 @@ MonoBehaviour:
   _maxHealth: 100
   _attackRange: 2
   _attackCoolDown: 2
+  _damage: 25
   _enemyAudioSource: {fileID: 1884181625}
   _enemyAudioClip: {fileID: 8300000, guid: 5e59565a7ad129d49a804154cb8bceeb, type: 3}
-  _damage: 25
-  flashDuration: 0.1
 --- !u!82 &1884181625
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2083,8 +2082,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.582
   m_Pitch: 1
   Loop: 0
   Mute: 0
