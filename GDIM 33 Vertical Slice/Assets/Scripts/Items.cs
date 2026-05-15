@@ -25,20 +25,14 @@ public class Items : MonoBehaviour
 
             if (catCollider != null)
             {
-                //CatConsumeMedicine();
-                //ConsumePowerUp();
-                OnCatConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
-                OnConsumePowerUp?.Invoke(_scriptableObject.plusPowerUp, _scriptableObject.duration);
-
-                gameObject.SetActive(false);
+                CatConsumeMedicine();
+                ConsumePowerUp();
             }
         }
 
         else if (_playerIsNear && Input.GetKeyDown(KeyCode.G))
         {
-            //PlayerConsumeMedicine();
-            OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
-            gameObject.SetActive(false);
+            PlayerConsumeMedicine();
         }
 
 
@@ -46,12 +40,6 @@ public class Items : MonoBehaviour
 
     public void PlayerConsumeMedicine()
     {
-        Debug.Log("Item: Attempting to heal Player...");
-        if (OnPlayerConsumeMedicine == null)
-        {
-            Debug.LogError("Item: NO ONE IS LISTENING! The Player script isn't subscribed.");
-        }
-
         OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
         gameObject.SetActive(false);
     }
