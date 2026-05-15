@@ -1013,7 +1013,7 @@ MonoBehaviour:
   _damage: 20
   _attackCooldown: 1.5
   _catAudioSource: {fileID: 1334732627}
-  _catAudioClipTakeDmg: {fileID: 0}
+  _catAudioClipTakeDmg: {fileID: 8300000, guid: 27b1f385d91618a4eb310f6a5eb2fc94, type: 3}
   _catAudioClipAttack: {fileID: 8300000, guid: 28ef051206387214c89d738bb93776ab, type: 3}
 --- !u!50 &1334732623
 Rigidbody2D:
