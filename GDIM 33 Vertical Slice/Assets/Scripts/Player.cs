@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource _playerAudioSource;
-    [SerializeField] private AudioClip _playerAudioClipAttack;
+    [SerializeField] private AudioClip _playerAudioClip;
 
     private float flashDuration = 0.1f;
     private Color _originalColor;
@@ -86,8 +86,6 @@ public class Player : MonoBehaviour
             if (ghost != null)
             {
                 ghost.TakeDamage(_attackDamage);
-
-                _playerAudioSource.PlayOneShot(_playerAudioClipAttack);
             }
 
             _lastAttackTime = Time.time;
@@ -98,6 +96,8 @@ public class Player : MonoBehaviour
     {
         _currentHealth -= damage;
         StartCoroutine(FlashRed());
+
+        _playerAudioSource.PlayOneShot(_playerAudioClip);
 
         if (_currentHealth < 0)
         {

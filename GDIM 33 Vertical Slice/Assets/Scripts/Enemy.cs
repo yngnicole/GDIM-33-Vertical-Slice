@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +7,18 @@ using UnityEngine.InputSystem.Composites;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Reference")]
     [SerializeField] Transform _cat;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+
+    [Header("Stats")]
     [SerializeField] public int _maxHealth = 100;
     [SerializeField] private float _attackRange = 5f;
     [SerializeField] private float _attackCoolDown;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource _enemyAudioSource;
+    [SerializeField] private AudioClip _enemyAudioClip;
 
     private float _lastAttackTime;
     private int _currentHealth;
