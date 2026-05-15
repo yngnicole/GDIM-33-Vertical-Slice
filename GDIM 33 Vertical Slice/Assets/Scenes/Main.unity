@@ -1013,8 +1013,7 @@ MonoBehaviour:
   _damage: 20
   _attackCooldown: 1.5
   _catAudioSource: {fileID: 1334732627}
-  _catAudioClipTakeDmg: {fileID: 8300000, guid: 27b1f385d91618a4eb310f6a5eb2fc94, type: 3}
-  _catAudioClipAttack: {fileID: 8300000, guid: 28ef051206387214c89d738bb93776ab, type: 3}
+  _catAudioClipAttack: {fileID: 8300000, guid: 27b1f385d91618a4eb310f6a5eb2fc94, type: 3}
 --- !u!50 &1334732623
 Rigidbody2D:
   serializedVersion: 4
@@ -1109,8 +1108,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.73
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1552,9 +1551,9 @@ MonoBehaviour:
   _attackDamage: 10
   _attackRange: 1.5
   _attackCoolDown: 1
-  _playerAudioSource: {fileID: 0}
+  _playerAudioSource: {fileID: 1650596046}
   _playerAudioClipTakeDmg: {fileID: 0}
-  _playerAudioClipAttack: {fileID: 0}
+  _playerAudioClipAttack: {fileID: 8300000, guid: 3090b98b96c4bfc4da8c05ac2de7368e, type: 3}
 --- !u!114 &1650596042
 MonoBehaviour:
   m_ObjectHideFlags: 0

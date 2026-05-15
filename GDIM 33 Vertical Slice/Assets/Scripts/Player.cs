@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource _playerAudioSource;
-    [SerializeField] private AudioClip _playerAudioClipTakeDmg;
     [SerializeField] private AudioClip _playerAudioClipAttack;
 
     private float flashDuration = 0.1f;
