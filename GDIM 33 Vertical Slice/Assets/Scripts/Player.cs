@@ -119,12 +119,15 @@ public class Player : MonoBehaviour
 
     private void Heal(int amount)
     {
+        int oldHealth = _currentHealth;
         _currentHealth += amount;
 
         if (_currentHealth > _maxHealth)
         {
             _currentHealth = _maxHealth;
         }
+
+        Debug.Log($"HEAL MATH: {oldHealth} + {amount} = {_currentHealth}. Max is: {_maxHealth}");
 
         OnPlayerHeal?.Invoke(_currentHealth);
     }

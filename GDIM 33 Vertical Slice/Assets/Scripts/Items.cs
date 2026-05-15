@@ -30,7 +30,7 @@ public class Items : MonoBehaviour
             }
         }
 
-        else if (_playerIsNear && Input.GetKey(KeyCode.G))
+        else if (_playerIsNear && Input.GetKeyDown(KeyCode.G))
         {
             PlayerConsumeMedicine();
         }
@@ -40,6 +40,12 @@ public class Items : MonoBehaviour
 
     public void PlayerConsumeMedicine()
     {
+        Debug.Log("Item: Attempting to heal Player...");
+        if (OnPlayerConsumeMedicine == null)
+        {
+            Debug.LogError("Item: NO ONE IS LISTENING! The Player script isn't subscribed.");
+        }
+
         OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
         gameObject.SetActive(false);
     }
