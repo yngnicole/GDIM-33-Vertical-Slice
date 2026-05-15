@@ -31,13 +31,13 @@ public class Cat : MonoBehaviour
     public static Action<int> OnPowerUp;
     private void OnEnable()
     {
-        Items.OnConsumeMedicine += Heal;
+        Items.OnCatConsumeMedicine += Heal;
         Items.OnConsumePowerUp += PowerUp;
     }
 
     private void OnDisable()
     {
-        Items.OnConsumeMedicine -= Heal;
+        Items.OnCatConsumeMedicine -= Heal;
         Items.OnConsumePowerUp -= PowerUp;
     }
     void Start()

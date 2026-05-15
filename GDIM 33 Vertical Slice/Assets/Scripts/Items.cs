@@ -12,7 +12,8 @@ public class Items : MonoBehaviour
     
     private bool _playerIsNear;
 
-    public static Action<int> OnConsumeMedicine;
+    public static Action<int> OnPlayerConsumeMedicine;
+    public static Action<int> OnCatConsumeMedicine;
     public static Action<int, float> OnConsumePowerUp;
 
     private void Update()
@@ -38,7 +39,8 @@ public class Items : MonoBehaviour
 
     public void ConsumeMedicine()
     {
-        OnConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+        OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+        OnCatConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
         
         gameObject.SetActive(false);
     }
