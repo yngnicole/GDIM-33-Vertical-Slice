@@ -5,15 +5,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Transform _enemy;
-    //[SerializeField] private float _speed;
-    [SerializeField] private int _maxHealth = 100;
-    [SerializeField] private float _attackRange = 1.5f;
-    [SerializeField] private int _attackDamage = 10;
     [SerializeField] private LayerMask _enemyLayer;
+
+    [Header("Stats")]
+    [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private int _attackDamage = 10;
+    [SerializeField] private float _attackRange = 1.5f;
     [SerializeField] private float _attackCoolDown = 1f;
+    //[SerializeField] private float _speed;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource _playerAudioSource;
+    [SerializeField] private AudioClip _playerAudioClipTakeDmg;
+    [SerializeField] private AudioClip _playerAudioClipAttack;
 
     private float flashDuration = 0.1f;
     private Color _originalColor;

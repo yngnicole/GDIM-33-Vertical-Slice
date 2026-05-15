@@ -5,13 +5,22 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Transform _player;
     [SerializeField] private Transform _enemy;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+
+    [Header("Stats")]
+    [SerializeField] private int _maxHealth = 100;
     [SerializeField] public int _damage = 20;
     [SerializeField] public float _attackCooldown = 1f;
-    [SerializeField] private int _maxHealth = 100;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource _catAudioSource;
+    [SerializeField] private AudioClip _catAudioClipTakeDmg;
+    [SerializeField] private AudioClip _catAudioClipAttack;
+
 
     private int _currentHealth;
     private float _lastAttackTime;
