@@ -34,12 +34,12 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        Items.OnConsumeMedicine += Heal;
+        Items.OnPlayerConsumeMedicine += Heal;
     }
 
     private void OnDisable()
     {
-        Items.OnConsumeMedicine -= Heal;
+        Items.OnPlayerConsumeMedicine -= Heal;
     }
     
     void Start()

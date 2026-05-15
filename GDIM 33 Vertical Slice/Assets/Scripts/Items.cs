@@ -37,11 +37,15 @@ public class Items : MonoBehaviour
 
     }
 
-    public void ConsumeMedicine()
+    public void PlayerConsumeMedicine()
     {
         OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+        gameObject.SetActive(false);
+    }
+
+    public void CatConsumeMedicine()
+    {
         OnCatConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
-        
         gameObject.SetActive(false);
     }
 
@@ -54,7 +58,8 @@ public class Items : MonoBehaviour
 
     private void UseItem()
     {
-        ConsumeMedicine();
+        PlayerConsumeMedicine();
+        CatConsumeMedicine();
         ConsumePowerUp();
     }
     private void OnTriggerEnter2D(Collider2D other)
