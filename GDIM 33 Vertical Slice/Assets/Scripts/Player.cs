@@ -7,16 +7,23 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private float _speed;
-    [SerializeField] private int _maxHealth;
+    [SerializeField] private Transform _enemy;
+    //[SerializeField] private float _speed;
+    [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private float _attackRange = 1.5f;
+    [SerializeField] private int _attackDamage = 10;
+    [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private float _attackCoolDown = 1f;
 
     private float flashDuration = 0.1f;
     private Color _originalColor;
-    public int _currentHealth;
+    private int _currentHealth;
+    private float _lastAttackTime;
+
 
     public static Action<int> OnPlayerHeal;
     public static Action<int> OnPlayerTakeDamage;
-    //public static Action<int> OnPlayerAttack;
+    public static Action<int> OnPlayerAttack;
 
     private void OnEnable()
     {
@@ -34,26 +41,51 @@ public class Player : MonoBehaviour
         _originalColor = _spriteRenderer.color;
 
         OnPlayerHeal?.Invoke(_currentHealth);
+        OnPlayerAttack?.Invoke(_attackDamage);
     }
 
     private void Update()
     {
         //movement with WASD and arrow keys
-        float movementX = Input.GetAxisRaw("Horizontal");
-        float movementY = Input.GetAxisRaw("Vertical");
+        //float movementX = Input.GetAxisRaw("Horizontal");
+        //float movementY = Input.GetAxisRaw("Vertical");
 
-        UnityEngine.Vector2 movement = new UnityEngine.Vector2(movementX, movementY);
+        //UnityEngine.Vector2 movement = new UnityEngine.Vector2(movementX, movementY);
 
-        transform.Translate(movement * _speed * Time.deltaTime);
+        //transform.Translate(movement * _speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Attack();
+        }
     }
 
     private void Attack()
     {
-        //press f key to attack 
-        // check if enemy is within range to be able to attack 
+        
+        //fixme
+        Collider2D hitEnemy = Physics2D.OverlapCircle(transform.position, _attackRange, _enemyLayer);
+
+
+        if (hitEnemy == null) 
+        {
+            return;
+        }
+       
+        if (Time.time - _lastAttackTime > _attackCoolDown)
+        {
+            Enemy ghost = hitEnemy.GetComponent<Enemy>();
+
+            if (ghost != null)
+            {
+                ghost.TakeDamage(_attackDamage);
+            }
+
+            _lastAttackTime = Time.time;
+        }
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
         StartCoroutine(FlashRed());

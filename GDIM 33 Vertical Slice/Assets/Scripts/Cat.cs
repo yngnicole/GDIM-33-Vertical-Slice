@@ -13,10 +13,10 @@ public class Cat : MonoBehaviour
     [SerializeField] public float _attackCooldown = 1f;
     [SerializeField] private int _maxHealth = 100;
 
-    public int _currentHealth;
-    private float lastAttackTime;
+    private int _currentHealth;
+    private float _lastAttackTime;
     private Color _originalColor;
-    public float flashDuration = 0.1f;
+    private float flashDuration = 0.1f;
 
     public static Action<int> OnHeal;
     public static Action<int> OnTakeDamage;
@@ -46,7 +46,7 @@ public class Cat : MonoBehaviour
 
         if (_enemy == null) return;
 
-        if(Time.time - lastAttackTime > _attackCooldown)
+        if(Time.time - _lastAttackTime > _attackCooldown)
         {
            Enemy ghost = _enemy.GetComponent<Enemy>();
            
@@ -56,7 +56,7 @@ public class Cat : MonoBehaviour
             }
            
 
-            lastAttackTime = Time.time;
+            _lastAttackTime = Time.time;
         }
     }
 
