@@ -127,8 +127,6 @@ public class Player : MonoBehaviour
             _currentHealth = _maxHealth;
         }
 
-        Debug.Log($"HEAL MATH: {oldHealth} + {amount} = {_currentHealth}. Max is: {_maxHealth}");
-
         OnPlayerHeal?.Invoke(_currentHealth);
     }
 
