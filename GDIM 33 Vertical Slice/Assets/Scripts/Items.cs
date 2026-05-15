@@ -25,13 +25,14 @@ public class Items : MonoBehaviour
 
             if (catCollider != null)
             {
-                UseItem();
+                CatConsumeMedicine();
+                ConsumePowerUp();
             }
         }
 
         else if (_playerIsNear && Input.GetKey(KeyCode.G))
         {
-            UseItem();
+            PlayerConsumeMedicine();
         }
 
 
@@ -54,13 +55,6 @@ public class Items : MonoBehaviour
         OnConsumePowerUp?.Invoke(_scriptableObject.plusPowerUp, _scriptableObject.duration);
 
         gameObject.SetActive(false);
-    }
-
-    private void UseItem()
-    {
-        PlayerConsumeMedicine();
-        CatConsumeMedicine();
-        ConsumePowerUp();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
