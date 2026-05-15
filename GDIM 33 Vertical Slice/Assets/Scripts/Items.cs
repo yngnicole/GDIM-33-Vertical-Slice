@@ -7,6 +7,7 @@ public class Items : MonoBehaviour
 {
     [SerializeField] ScriptableObjectItem _scriptableObject;
     [SerializeField] LayerMask _catLayer;
+    [SerializeField] LayerMask _playerLayer;
     [SerializeField] float _checkRadius = 2.0f;
     
     private bool _playerIsNear;
@@ -23,15 +24,13 @@ public class Items : MonoBehaviour
 
             if (catCollider != null)
             {
-                ConsumeMedicine();
-                ConsumePowerUp();
+                UseItem();
             }
         }
 
-        else if (Input.GetKey(KeyCode.G))
+        else if (_playerIsNear && Input.GetKey(KeyCode.G))
         {
-            ConsumeMedicine();
-            ConsumePowerUp();
+            UseItem();
         }
 
 
@@ -51,6 +50,11 @@ public class Items : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void UseItem()
+    {
+        ConsumeMedicine();
+        ConsumePowerUp();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
