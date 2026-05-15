@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Audio : MonoBehaviour
 {
-    [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip _audioClip;
+    [SerializeField] private AudioSource _playerAudioSource;
+    [SerializeField] private AudioClip _playerAudioClipTakeDmg;
+    [SerializeField] private AudioClip _playerAudioClipAttack;
+    [SerializeField] private AudioSource _catAudioSource;
     void Start()
     {
         
