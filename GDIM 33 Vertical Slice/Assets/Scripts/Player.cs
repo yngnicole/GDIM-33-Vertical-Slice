@@ -22,6 +22,14 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource _playerAudioSource;
     [SerializeField] private AudioClip _playerAudioClip;
 
+    [Header("Hunger")]
+    [SerializeField] private int _hungerDmg = 5;
+    [SerializeField] private float _hungerDmgInterval = 1f;
+    [SerializeField] private float _drainRate = 5f;
+    public float _currentHunger = 100f;
+    public float _maxHunger = 100f;
+    private float _hungerDmgTimer;
+
     private float flashDuration = 0.1f;
     private Color _originalColor;
     private int _currentHealth;
@@ -60,6 +68,8 @@ public class Player : MonoBehaviour
         //UnityEngine.Vector2 movement = new UnityEngine.Vector2(movementX, movementY);
 
         //transform.Translate(movement * _speed * Time.deltaTime);
+
+        Hunger();
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -112,6 +122,31 @@ public class Player : MonoBehaviour
         OnPlayerTakeDamage?.Invoke(_currentHealth);
     }
 
+    private void Hunger()
+    {
+        if (_currentHunger > 0)
+        {
+            _currentHunger -= _drainRate * Time.deltaTime;
+        }
+
+        _currentHunger = Mathf.Clamp(_currentHunger, 0, _maxHunger);
+
+        if (_currentHunger <= 0)
+        {
+            _hungerDmgTimer += Time.deltaTime;
+
+            if (_hungerDmgTimer >= _hungerDmgInterval)
+            {
+                TakeDamage(_hungerDmg);
+                _hungerDmgTimer = 0f;
+            }
+        }
+        else
+        {
+            _hungerDmgTimer = 0f;
+        }
+    }
+
     void Die()
     {
         Destroy(gameObject);
@@ -129,7 +164,6 @@ public class Player : MonoBehaviour
 
         OnPlayerHeal?.Invoke(_currentHealth);
     }
-
     private IEnumerator FlashRed()
     {
         _spriteRenderer.color = Color.red;

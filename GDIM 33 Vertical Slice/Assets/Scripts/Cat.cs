@@ -15,20 +15,29 @@ public class Cat : MonoBehaviour
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] public int _damage = 20;
     [SerializeField] public float _attackCooldown = 1f;
+    private int _currentHealth;
+    private float _lastAttackTime;
 
     [Header("Audio")]
     [SerializeField] private AudioSource _catAudioSource;
     [SerializeField] private AudioClip _catAudioClip;
 
-
-    private int _currentHealth;
-    private float _lastAttackTime;
+    [Header("Hunger")]
+    [SerializeField] private int _hungerDmg = 5;
+    [SerializeField] private float _hungerDmgInterval = 1f;
+    [SerializeField] private float _drainRate = 5f;
+    public float _currentHunger = 100f;
+    public float _maxHunger = 100f;
+    private float _hungerDmgTimer;
+    
     private Color _originalColor;
     private float flashDuration = 0.1f;
+
 
     public static Action<int> OnHeal;
     public static Action<int> OnTakeDamage;
     public static Action<int> OnPowerUp;
+
     private void OnEnable()
     {
         Items.OnCatConsumeMedicine += Heal;
@@ -40,6 +49,7 @@ public class Cat : MonoBehaviour
         Items.OnCatConsumeMedicine -= Heal;
         Items.OnConsumePowerUp -= PowerUp;
     }
+
     void Start()
     {
         _currentHealth = _maxHealth;
@@ -50,6 +60,10 @@ public class Cat : MonoBehaviour
      
     }
 
+    private void Update()
+    {
+        Hunger();
+    }
     public void Attack()
     {
 
@@ -106,6 +120,31 @@ public class Cat : MonoBehaviour
         }
 
         OnHeal?.Invoke(_currentHealth);
+    }
+
+    public void Hunger()
+    {
+        if (_currentHunger > 0)
+        {
+            _currentHunger -= _drainRate * Time.deltaTime;
+        }
+
+        _currentHunger = Mathf.Clamp(_currentHunger, 0, _maxHunger);
+
+        if (_currentHunger <= 0)
+        {
+            _hungerDmgTimer += Time.deltaTime;
+
+            if(_hungerDmgTimer >= _hungerDmgInterval)
+            {
+                TakeDamage(_hungerDmg);
+                _hungerDmgTimer = 0f;
+            }
+        }
+        else
+        {
+            _hungerDmgTimer = 0f;
+        }
     }
     
     public void PowerUp(int amount, float duration)
