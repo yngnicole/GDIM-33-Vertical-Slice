@@ -35,10 +35,10 @@ public class Player : MonoBehaviour
     private int _currentHealth;
     private float _lastAttackTime;
 
-
     public static Action<int> OnPlayerHeal;
     public static Action<int> OnPlayerTakeDamage;
     public static Action<int> OnPlayerAttack;
+    public static Action<float> OnHunger;
 
     private void OnEnable()
     {
@@ -145,6 +145,8 @@ public class Player : MonoBehaviour
         {
             _hungerDmgTimer = 0f;
         }
+
+        OnHunger?.Invoke(_currentHunger);
     }
 
     void Die()

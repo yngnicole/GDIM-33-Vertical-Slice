@@ -25,7 +25,7 @@ public class Cat : MonoBehaviour
     [Header("Hunger")]
     [SerializeField] private int _hungerDmg = 5;
     [SerializeField] private float _hungerDmgInterval = 1f;
-    [SerializeField] private float _drainRate = 5f;
+    [SerializeField] private float _drainRate = 1f;
     public float _currentHunger = 100f;
     public float _maxHunger = 100f;
     private float _hungerDmgTimer;
@@ -33,10 +33,10 @@ public class Cat : MonoBehaviour
     private Color _originalColor;
     private float flashDuration = 0.1f;
 
-
     public static Action<int> OnHeal;
     public static Action<int> OnTakeDamage;
     public static Action<int> OnPowerUp;
+    public static Action<float> OnHunger;
 
     private void OnEnable()
     {
@@ -145,6 +145,8 @@ public class Cat : MonoBehaviour
         {
             _hungerDmgTimer = 0f;
         }
+
+        OnHunger?.Invoke(_currentHunger);
     }
     
     public void PowerUp(int amount, float duration)
