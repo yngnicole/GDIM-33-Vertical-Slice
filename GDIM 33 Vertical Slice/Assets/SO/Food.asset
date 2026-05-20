@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plusHealth: 0
   plusHunger: 20
-  powerUp: 0
+  plusPowerUp: 0
+  duration: 0
   icon: {fileID: 21300000, guid: ef89053d927278c4cafea1a46deb45d9, type: 3}
+  isFood: 1
+  isMedicine: 0
+  isPowerupp: 0

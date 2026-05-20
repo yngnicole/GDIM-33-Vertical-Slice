@@ -17,3 +17,6 @@ MonoBehaviour:
   plusPowerUp: 20
   duration: 10
   icon: {fileID: 0}
+  isFood: 0
+  isMedicine: 0
+  isPowerupp: 1

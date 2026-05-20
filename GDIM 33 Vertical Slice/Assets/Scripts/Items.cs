@@ -19,9 +19,10 @@ public class Items : MonoBehaviour
     public static Action<float> OnPlayerConsumeFood;
     private void Update()
     {
-        if (_playerIsNear && Input.GetKeyDown(KeyCode.V))
+        if (!_playerIsNear) return;
+        
+        if (Input.GetKeyDown(KeyCode.V))
         {
-
             Collider2D catCollider = Physics2D.OverlapCircle(transform.position, _checkRadius, _catLayer);
 
             if (catCollider != null)
@@ -37,10 +38,16 @@ public class Items : MonoBehaviour
             }
         }
 
-        else if (_playerIsNear && Input.GetKeyDown(KeyCode.G))
+        else if (Input.GetKeyDown(KeyCode.G))
         {
             // PlayerConsumeMedicine();
             //PlayerConsumeFood();
+
+            if (_scriptableObject.plusPowerUp > 0)
+            {
+                return;
+            }
+
             OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
             OnPlayerConsumeFood?.Invoke(_scriptableObject.plusHunger);
 

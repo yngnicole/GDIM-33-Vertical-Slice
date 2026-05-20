@@ -12,4 +12,8 @@ public class ScriptableObjectItem : ScriptableObject
     public int plusPowerUp;
     public float duration;
     public Sprite icon;
+
+    public bool isFood;
+    public bool isMedicine;
+    public bool isPowerupp;
 }
