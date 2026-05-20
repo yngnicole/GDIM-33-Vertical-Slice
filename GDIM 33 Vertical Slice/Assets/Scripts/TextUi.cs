@@ -30,7 +30,6 @@ public class TextUi : MonoBehaviour
         Player.OnPlayerTakeDamage += UpdatePlayerHealth;
         Player.OnPlayerAttack += UpdatePlayerAttack;
         Player.OnHunger += UpdatePlayerHunger;
-        
 
         Enemy.OnEnemyTakeDamage += UpdateEnemyHealth;
     }
@@ -40,6 +39,14 @@ public class TextUi : MonoBehaviour
         Cat.OnHeal -= UpdateCatHealth;
         Cat.OnTakeDamage -= UpdateCatHealth;
         Cat.OnPowerUp -= UpdateCatAttack;
+        Cat.OnHunger -= UpdateCatHunger;
+        Items.OnCatConsumeFood -= UpdateCatHunger;
+
+        Player.OnPlayerHeal -= UpdatePlayerHealth;
+        Player.OnPlayerTakeDamage -= UpdatePlayerHealth;
+        Player.OnPlayerAttack -= UpdatePlayerAttack;
+        Player.OnHunger -= UpdatePlayerHunger;
+        Items.OnPlayerConsumeFood -= UpdatePlayerHunger;
 
         Enemy.OnEnemyTakeDamage -= UpdateEnemyHealth;
     }
@@ -60,7 +67,7 @@ public class TextUi : MonoBehaviour
 
     public void UpdateCatHunger(float Hunger)
     {
-        _catHungerText.text = "Cat Hunger: " + Hunger;
+        _catHungerText.text = "Cat Hunger: " + Hunger.ToString("F0");
     }
 
     public void UpdatePlayerHealth(int Health)
@@ -75,7 +82,7 @@ public class TextUi : MonoBehaviour
 
     public void UpdatePlayerHunger(float Hunger)
     {
-        _playerHungerText.text = "Player Hunger: " + Hunger;
+        _playerHungerText.text = "Player Hunger: " + Hunger.ToString("F0");
     }
 
 }

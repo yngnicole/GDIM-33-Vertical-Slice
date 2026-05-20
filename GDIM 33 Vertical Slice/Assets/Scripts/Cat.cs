@@ -42,12 +42,14 @@ public class Cat : MonoBehaviour
     {
         Items.OnCatConsumeMedicine += Heal;
         Items.OnConsumePowerUp += PowerUp;
+        Items.OnCatConsumeFood += EatFood;
     }
 
     private void OnDisable()
     {
         Items.OnCatConsumeMedicine -= Heal;
         Items.OnConsumePowerUp -= PowerUp;
+        Items.OnCatConsumeFood -= EatFood;
     }
 
     void Start()
@@ -57,12 +59,13 @@ public class Cat : MonoBehaviour
 
         OnHeal?.Invoke(_currentHealth);
         OnPowerUp?.Invoke(_damage);
+        OnHunger?.Invoke(_currentHealth);
      
     }
 
     private void Update()
     {
-        Hunger();
+        HungerDrain();
     }
     public void Attack()
     {
@@ -122,7 +125,7 @@ public class Cat : MonoBehaviour
         OnHeal?.Invoke(_currentHealth);
     }
 
-    public void Hunger()
+    public void HungerDrain()
     {
         if (_currentHunger > 0)
         {
@@ -149,6 +152,13 @@ public class Cat : MonoBehaviour
         OnHunger?.Invoke(_currentHunger);
     }
     
+    private void EatFood(float amount)
+    {
+        _currentHunger += amount;
+        _currentHunger = Mathf.Clamp(_currentHunger, 0, _maxHunger);
+
+        OnHunger?.Invoke(_currentHunger);
+    }
     public void PowerUp(int amount, float duration)
     {
         StartCoroutine(PowerUpRoutine(amount, duration));

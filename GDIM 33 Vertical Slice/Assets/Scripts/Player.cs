@@ -43,11 +43,13 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         Items.OnPlayerConsumeMedicine += Heal;
+        Items.OnPlayerConsumeFood += EatFood;
     }
 
     private void OnDisable()
     {
         Items.OnPlayerConsumeMedicine -= Heal;
+        Items.OnPlayerConsumeFood -= EatFood;
     }
     
     void Start()
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
 
         OnPlayerHeal?.Invoke(_currentHealth);
         OnPlayerAttack?.Invoke(_attackDamage);
+        OnHunger?.Invoke(_currentHunger);
     }
 
     private void Update()
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour
 
         //transform.Translate(movement * _speed * Time.deltaTime);
 
-        Hunger();
+        HungerDrain();
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -122,7 +125,7 @@ public class Player : MonoBehaviour
         OnPlayerTakeDamage?.Invoke(_currentHealth);
     }
 
-    private void Hunger()
+    private void HungerDrain()
     {
         if (_currentHunger > 0)
         {
@@ -145,6 +148,14 @@ public class Player : MonoBehaviour
         {
             _hungerDmgTimer = 0f;
         }
+
+        OnHunger?.Invoke(_currentHunger);
+    }
+
+    private void EatFood(float amount)
+    {
+        _currentHunger += amount;
+        _currentHunger = Mathf.Clamp(_currentHunger, 0, _maxHunger);
 
         OnHunger?.Invoke(_currentHunger);
     }

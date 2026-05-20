@@ -325,7 +325,7 @@ Transform:
   m_GameObject: {fileID: 376133406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7419498, y: -0.030429602, z: 9.9103565}
+  m_LocalPosition: {x: 5.21, y: 0.12, z: 9.9103565}
   m_LocalScale: {x: 0.13815095, y: 0.13815095, z: 0.13815095}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1168,7 +1168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.26, y: -0.44}
+  m_AnchoredPosition: {x: 2.54, y: -0.35}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1128676953
@@ -2724,7 +2724,7 @@ Transform:
   m_GameObject: {fileID: 2078015766}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.43155003, y: 0.17607045, z: 9.9103565}
+  m_LocalPosition: {x: -2.51, y: -0.88, z: 9.9103565}
   m_LocalScale: {x: 0.14982915, y: 0.14982915, z: 0.14982915}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2784,7 +2784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -178, y: -40}
+  m_AnchoredPosition: {x: -142, y: -35}
   m_SizeDelta: {x: 339.74, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110931285
@@ -2807,7 +2807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: 'Enemy Health:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

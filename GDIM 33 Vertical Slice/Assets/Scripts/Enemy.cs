@@ -32,6 +32,8 @@ public class Enemy : MonoBehaviour
     {
         Health();
         _originalColor = _spriteRenderer.color;
+        
+        OnEnemyTakeDamage?.Invoke(_currentHealth);
     }
 
     void FixedUpdate()
@@ -51,6 +53,12 @@ public class Enemy : MonoBehaviour
         StartCoroutine(FlashRed());
 
         _enemyAudioSource.PlayOneShot(_enemyAudioClip);
+
+        if (_currentHealth < 0)
+        {
+            _currentHealth = 0;
+            
+        }
 
         if (_currentHealth <= 0)
         {

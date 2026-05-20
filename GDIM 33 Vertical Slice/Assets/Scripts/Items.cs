@@ -15,7 +15,8 @@ public class Items : MonoBehaviour
     public static Action<int> OnPlayerConsumeMedicine;
     public static Action<int> OnCatConsumeMedicine;
     public static Action<int, float> OnConsumePowerUp;
-
+    public static Action<float> OnCatConsumeFood;
+    public static Action<float> OnPlayerConsumeFood;
     private void Update()
     {
         if (_playerIsNear && Input.GetKeyDown(KeyCode.V))
@@ -25,30 +26,54 @@ public class Items : MonoBehaviour
 
             if (catCollider != null)
             {
-                CatConsumeMedicine();
-                ConsumePowerUp();
+                //CatConsumeMedicine();
+                //ConsumePowerUp();
+                //CatConsumeFood();
+                OnCatConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+                OnConsumePowerUp?.Invoke(_scriptableObject.plusPowerUp, _scriptableObject.duration);
+                OnCatConsumeFood?.Invoke(_scriptableObject.plusHunger);
+
+                gameObject.SetActive(false);
             }
         }
 
         else if (_playerIsNear && Input.GetKeyDown(KeyCode.G))
         {
-            PlayerConsumeMedicine();
+            // PlayerConsumeMedicine();
+            //PlayerConsumeFood();
+            OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
+            OnPlayerConsumeFood?.Invoke(_scriptableObject.plusHunger);
+
+            gameObject.SetActive(false);
         }
 
 
     }
 
-    public void PlayerConsumeMedicine()
+    /*public void PlayerConsumeMedicine()
     {
         OnPlayerConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
         gameObject.SetActive(false);
     }
 
+    public void PlayerConsumeFood()
+    {
+        OnPlayerConsumeFood?.Invoke(_scriptableObject.plusHunger);
+        gameObject.SetActive(false);
+    }
     public void CatConsumeMedicine()
     {
         OnCatConsumeMedicine?.Invoke(_scriptableObject.plusHealth);
         gameObject.SetActive(false);
     }
+
+    public void CatConsumeFood()
+    {
+        OnCatConsumeFood?.Invoke(_scriptableObject.plusHunger);
+        gameObject.SetActive(false);
+    }
+
+
 
     public void ConsumePowerUp()
     {
@@ -56,6 +81,10 @@ public class Items : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
+    */
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
