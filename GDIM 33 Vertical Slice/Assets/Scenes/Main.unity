@@ -241,8 +241,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.018268278, y: 0.6758024}
-  m_Size: {x: 6.550469, y: 8.230839}
+  m_Offset: {x: 0.0062693357, y: 0.11039102}
+  m_Size: {x: 1.1397707, y: 1.5293453}
   m_Direction: 0
 --- !u!114 &376133408
 MonoBehaviour:
@@ -326,7 +326,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.21, y: 0.12, z: 9.9103565}
-  m_LocalScale: {x: 0.13815095, y: 0.13815095, z: 0.13815095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1652722580}
@@ -1342,18 +1342,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13177943, y: 0.4418435}
+  m_Offset: {x: 0.09536064, y: 0.054287314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 2.048, y: 2.048}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.85257, y: 5.8680716}
+  m_Size: {x: 1.560334, y: 1.559324}
   m_EdgeRadius: 0
 --- !u!212 &1334732620
 SpriteRenderer:
@@ -1417,7 +1417,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.9867992, y: -2.73, z: 0}
-  m_LocalScale: {x: 0.19822055, y: 0.19822055, z: 0.19822055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1878,18 +1878,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.38758254, y: 0.06976509}
+  m_Offset: {x: -0.19011593, y: -0.034165144}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9224486, y: 9.38732}
+  m_Size: {x: 1.5089922, y: 3.8997931}
   m_EdgeRadius: 0
 --- !u!212 &1650596038
 SpriteRenderer:
@@ -1952,7 +1952,7 @@ RectTransform:
   m_GameObject: {fileID: 1650596036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.31220266, y: 0.31220266, z: 0.31220266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -2413,18 +2413,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.37453532, y: 0.52775073}
+  m_Offset: {x: -0.11725366, y: 0.15726686}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 4.4521737, y: 4.4521737}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.58795, y: 9.184498}
+  m_Size: {x: 1.582916, y: 3.9565616}
   m_EdgeRadius: 0
 --- !u!212 &1884181622
 SpriteRenderer:
@@ -2488,7 +2488,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.88, y: -1.75, z: 0}
-  m_LocalScale: {x: 0.3605, y: 0.3605, z: 0.3605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2660,8 +2660,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10076715, y: 0.8262978}
-  m_Size: {x: 7.5394263, y: 7.5394263}
+  m_Offset: {x: 0.037082434, y: 0.038114786}
+  m_Size: {x: 1.2747607, y: 1.2747607}
   m_Direction: 0
 --- !u!212 &2078015768
 SpriteRenderer:
@@ -2725,7 +2725,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.51, y: -0.88, z: 9.9103565}
-  m_LocalScale: {x: 0.14982915, y: 0.14982915, z: 0.14982915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1652722580}
