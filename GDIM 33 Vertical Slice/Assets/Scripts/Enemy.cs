@@ -132,7 +132,19 @@ public class Enemy : MonoBehaviour
             if (attackedSomeone)
             {
                 _lastAttackTime = Time.time;
+                FreezePermanentlyOnAttack();
             }
+        }
+    }
+
+    private void FreezePermanentlyOnAttack()
+    {
+        _isMovementFreeze = true;
+
+        if (_rb != null)
+        {
+            _rb.velocity = Vector2.zero;
+            _rb.bodyType = RigidbodyType2D.Static; // Turns it into a permanent brick wall
         }
     }
     public void TakeDamage(int damage)
@@ -185,13 +197,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-
-    /*private IEnumerator FlashRed()
-    {
-        _spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(flashDuration);
-        _spriteRenderer.color = _originalColor;
-    }*/
     private IEnumerator FlashRedAndFreezeMovement()
     {
         _isMovementFreeze = true;
