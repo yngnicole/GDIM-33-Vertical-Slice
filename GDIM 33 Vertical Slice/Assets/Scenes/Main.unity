@@ -21193,7 +21193,7 @@ MonoBehaviour:
   _enemy: {fileID: 0}
   rb: {fileID: 9221981783907299159}
   _spriteRenderer: {fileID: 7822484821213674175}
-  _maxHealth: 100
+  _maxHealth: 1000
   _damage: 20
   _attackCooldown: 1.5
   _catAudioSource: {fileID: 5190864497688190806}
@@ -21507,6 +21507,10 @@ PrefabInstance:
       propertyPath: _pointB
       value: 
       objectReference: {fileID: 970374782}
+    - target: {fileID: 7264367557293198919, guid: d022546da5a9ed346b718cfc0ea088ac, type: 3}
+      propertyPath: _maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -8735664945237463397, guid: d022546da5a9ed346b718cfc0ea088ac, type: 3}
     m_RemovedGameObjects: []

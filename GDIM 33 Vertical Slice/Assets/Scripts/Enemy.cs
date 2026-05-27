@@ -54,16 +54,6 @@ public class Enemy : MonoBehaviour
             HandleMovement();
         }
 
-        /*if (_cat == null) return;
-        float distanceToCat = Vector2.Distance(transform.position, _cat.position);
-
-        // If cat is close, attack
-        if (distanceToCat < _attackRange)
-        {
-            Attack();
-        }
-        */
-
         CheckForTargets();
     }
 
@@ -128,12 +118,13 @@ public class Enemy : MonoBehaviour
                     }
                 }
             }
+        }
 
-            if (attackedSomeone)
-            {
-                _lastAttackTime = Time.time;
-                FreezePermanentlyOnAttack();
-            }
+
+        if (attackedSomeone)
+        {
+            _lastAttackTime = Time.time;
+            FreezePermanentlyOnAttack();
         }
     }
 
@@ -144,7 +135,7 @@ public class Enemy : MonoBehaviour
         if (_rb != null)
         {
             _rb.velocity = Vector2.zero;
-            _rb.bodyType = RigidbodyType2D.Static; // Turns it into a permanent brick wall
+            _rb.bodyType = RigidbodyType2D.Static; 
         }
     }
     public void TakeDamage(int damage)
