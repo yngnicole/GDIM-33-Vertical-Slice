@@ -162,6 +162,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        transform.DetachChildren();
         Destroy(gameObject);
     }
 

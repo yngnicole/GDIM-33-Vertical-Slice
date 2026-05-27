@@ -128,6 +128,11 @@ public class Enemy : MonoBehaviour
                     }
                 }
             }
+
+            if (attackedSomeone)
+            {
+                _lastAttackTime = Time.time;
+            }
         }
     }
     public void TakeDamage(int damage)
