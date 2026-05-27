@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
             HandleMovement();
         }
 
-        if (_cat == null) return;
+        /*if (_cat == null) return;
         float distanceToCat = Vector2.Distance(transform.position, _cat.position);
 
         // If cat is close, attack
@@ -62,6 +62,9 @@ public class Enemy : MonoBehaviour
         {
             Attack();
         }
+        */
+
+        CheckForTargets();
     }
 
     public void HandleMovement()
@@ -88,6 +91,42 @@ public class Enemy : MonoBehaviour
             else if (_currentPoint == _pointA.transform)
             {
                 _currentPoint = _pointB.transform;
+            }
+        }
+    }
+
+    private void CheckForTargets()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, _attackRange);
+
+        bool attackedSomeone = false;
+
+        foreach (Collider2D collider in hitColliders)
+        {
+            if (collider.CompareTag("Cat"))
+            {
+                Cat cat = collider.GetComponent<Cat>();
+                if (cat != null)
+                {
+                    if (Time.time - _lastAttackTime > _attackCoolDown)
+                    {
+                        cat.TakeDamage(_damage);
+                        attackedSomeone = true;
+                    }
+                }
+            }
+
+            if (collider.CompareTag("Player"))
+            {
+                Player player = collider.GetComponent<Player>();
+                if (player != null)
+                {
+                    if (Time.time - _lastAttackTime > _attackCoolDown)
+                    {
+                        player.TakeDamage(_damage);
+                        attackedSomeone = true;
+                    }
+                }
             }
         }
     }
