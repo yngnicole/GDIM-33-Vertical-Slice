@@ -52,7 +52,11 @@ and movement of the cat.
 I want to be graded on ScriptableObjects as my Unity system. The scriptableObjects are the items on the map (The potion and the bowl).
 
 ## Milestone 3 Devlog
-Milestone 3 Devlog goes here.
+Describe how your ShaderGraph works. You must cite something technical about the shader (like ShaderGraph Nodes used, or concepts learned in class about vertex data or the rendering pipeline) and accurately explain the shader. Attach a screenshot of your ShaderGraph. Please make sure it's also very clear from your explanation where the graders can find this shader in the game to give you credit for it.
+In a paragraph or less, explain to the grading team what you improved in your gameplay based on feedback from playtesting.
+In a paragraph or less, explain to the grading team what new content you added since the last Milestone, and its context in the gameplay loop.
+
+
 ## Milestone 4 Devlog
 Milestone 4 Devlog goes here.
 ## Final Devlog
