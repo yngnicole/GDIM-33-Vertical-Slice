@@ -52,7 +52,20 @@ and movement of the cat.
 I want to be graded on ScriptableObjects as my Unity system. The scriptableObjects are the items on the map (The potion and the bowl).
 
 ## Milestone 3 Devlog
-Describe how your ShaderGraph works. You must cite something technical about the shader (like ShaderGraph Nodes used, or concepts learned in class about vertex data or the rendering pipeline) and accurately explain the shader. Attach a screenshot of your ShaderGraph. Please make sure it's also very clear from your explanation where the graders can find this shader in the game to give you credit for it.
+- My ShaderGraph is a full screen post-prcessing effect that creates a vignette on the screen. I used a tilling and offset node and connected it to a length node.
+The tilling and offset nodes gets the UV coordinates of my screen. I changed the offset to -0.5, -0.5 so that the length node would calculate a centered circle on the screen instead of 
+starting from the bottom left giving it the vignette effect. I connected that to a power node with a vignette power property and connected the power node to a multiply node with a vignette intensity node. 
+These two nodes and property changes how intense the vignette color is and how big or how much the vignette covers the screen. I connected this to the alpha in the fragment and then a color node to the base color.
+- 
+- and connected it to a length node.
+- 
+- 
+Describe how your ShaderGraph works. You must cite something technical about the shader 
+(like ShaderGraph Nodes used, or concepts learned in class about vertex data or the rendering pipeline) 
+and accurately explain the shader. Attach a screenshot of your ShaderGraph. 
+Please make sure it's also very clear from your explanation where the graders can find this shader in the game to give you credit for it.
+
+
 In a paragraph or less, explain to the grading team what you improved in your gameplay based on feedback from playtesting.
 In a paragraph or less, explain to the grading team what new content you added since the last Milestone, and its context in the gameplay loop.
 
