@@ -56,19 +56,12 @@ I want to be graded on ScriptableObjects as my Unity system. The scriptableObjec
 The tilling and offset nodes gets the UV coordinates of my screen. I changed the offset to -0.5, -0.5 so that the length node would calculate a centered circle on the screen instead of 
 starting from the bottom left giving it the vignette effect. I connected that to a power node with a vignette power property and connected the power node to a multiply node with a vignette intensity node. 
 These two nodes and property changes how intense the vignette color is and how big or how much the vignette covers the screen. I connected this to the alpha in the fragment and then a color node to the base color.
-- 
-- and connected it to a length node.
-- 
-- 
-Describe how your ShaderGraph works. You must cite something technical about the shader 
-(like ShaderGraph Nodes used, or concepts learned in class about vertex data or the rendering pipeline) 
-and accurately explain the shader. Attach a screenshot of your ShaderGraph. 
-Please make sure it's also very clear from your explanation where the graders can find this shader in the game to give you credit for it.
-
-
-In a paragraph or less, explain to the grading team what you improved in your gameplay based on feedback from playtesting.
-In a paragraph or less, explain to the grading team what new content you added since the last Milestone, and its context in the gameplay loop.
-
+- What improved from my gameplay is that I made it so the enemy is actually moving now and can attack both the cat and the player. Originally it was only attacking the cat. I also made it so that the player 
+can consume medicine and food items but cannot consume powerup items and make the item disappear. Now only the cat can consume powerup items. I also fixed the issue where 
+the player doesn't move when running into the enemy and only the cat does. Now the player can move when attacking the enemy and the cat will only disengage from fighting the enemy is the player is
+super far away.
+- The new contents that I have for my game is that I created a room with a tileset I made. I also finished creating a powerup item and added it to the game. I also added environmental
+aspects that show that the room is a bedroom. I added more items and enemies into the game so that the gameplay loop of suriving and killing enemies is able to be carried out more then once. 
 <img width="1693" height="726" alt="Screenshot 2026-05-28 171516" src="https://github.com/user-attachments/assets/4bdb816c-aedd-4c2a-8766-cc5d7d0bfddb" />
 
 
