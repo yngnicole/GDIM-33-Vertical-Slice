@@ -56,6 +56,8 @@ Describe how your ShaderGraph works. You must cite something technical about the
 In a paragraph or less, explain to the grading team what you improved in your gameplay based on feedback from playtesting.
 In a paragraph or less, explain to the grading team what new content you added since the last Milestone, and its context in the gameplay loop.
 
+<img width="1693" height="726" alt="Screenshot 2026-05-28 171516" src="https://github.com/user-attachments/assets/4bdb816c-aedd-4c2a-8766-cc5d7d0bfddb" />
+
 
 ## Milestone 4 Devlog
 Milestone 4 Devlog goes here.
