@@ -65,11 +65,29 @@ aspects that show that the room is a bedroom. I added more items and enemies int
 <img width="1693" height="726" alt="Screenshot 2026-05-28 171516" src="https://github.com/user-attachments/assets/4bdb816c-aedd-4c2a-8766-cc5d7d0bfddb" />
 
 
-## Milestone 4 Devlog
-Milestone 4 Devlog goes here.
 ## Final Devlog
-Final Devlog goes here.
+1. My core gameplay loop is that players will need to find items to fulfill their or their cats hunger while killing enemies to try to escape. There are food items 
+that can be consumed and other items like medicine and powerup that help with defeating enemies. There are currently two rooms. The gameplay and content I implemented
+is prettyy similar to what I originally planned but I had to scale down on my project a little because I was having fevers for a week straight and got diagnosed with pnuenomia. I originally planned to create 
+different environmental assets for the second room but got permission to reuse my current environmental assets. The gameplay and content I have currently illustrates to the 
+player that the full game would be pretty similar in that players will try to advance through rooms/levels while surviving and defeating enemies. 
+2. My rendering effect is a vignette post-processing effect on the entire screen. It is activiated through the Vignette Space script that activiates thee vignette 
+when the player enters a specific zone in the game. I did this through OntriggerEnter and onTriggerExit methods which checked to see if the object with the player tag
+has entered the specific zone. To actually set up this specific zone, I used a volume component on a gameobject with a 2d box collider with isTrigger checked
+that indicated which area will be triggering the vignette. 
+3. My process for how I broke down a large parject into a specific system was first using the bubble diagram break-down for the large concepts and gameobject components.
+I used this initially because it was helpful to get the overarching image of the bigger parts of the project before focusing too much on the more little details.
+I also used the task step break-downs after the bubble diagram break-down. I used the task step break-downs for specific mechanics or feature I wanted to implement into
+the game so that I would have a step by step plan in how to accomplish them instead of feeling overwhelembed all at once. The process of breaking down a large project
+into small steps affect my understanding of the scope of the project because it makes me realize that even if I think something is easily done and doesn't take that long,
+it might just take longer then I think and make the scope of the project bigger. I think the plan I described relate to my process of creating the Vertical slice project
+as I went from the bigger details into the smaller details until I can finish with a comfortable scope. I think what I planned out with the bubble diagram and
+task breakdown helped me scope decently as I didn't need to cut out a lot of things I planned but there were more stuff I wanted to do optionally that I ended up not 
+being able to because I got sick. 
+
+
 ## Open-source assets
 [Cat Take Damage Sound](https://uppbeat.io/sfx/cat-threatening-growl/13302/32826)
 [Player Take Damage Sound](https://pixabay.com/sound-effects/film-special-effects-damage-blowhole-402072/)
 [Enemy Take Damage Sound](https://pixabay.com/sound-effects/horror-ghost-horror-sound-382709/)
+[background audio](https://pixabay.com/music/horror-scene-horror-ambience-512255/)
