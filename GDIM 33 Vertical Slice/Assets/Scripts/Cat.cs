@@ -103,6 +103,7 @@ public class Cat : MonoBehaviour
         if (_currentHealth <= 0)
         {
             Die();
+            GameManager.Instance.TriggerGameOver();
         }
 
         OnTakeDamage?.Invoke(_currentHealth);
@@ -110,7 +111,7 @@ public class Cat : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void Heal(int amount)

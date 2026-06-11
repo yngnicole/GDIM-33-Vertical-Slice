@@ -120,6 +120,7 @@ public class Player : MonoBehaviour
         if (_currentHealth <= 0)
         {
             Die();
+            GameManager.Instance.TriggerGameOver();
         }
 
         OnPlayerTakeDamage?.Invoke(_currentHealth);
@@ -163,7 +164,7 @@ public class Player : MonoBehaviour
     void Die()
     {
         transform.DetachChildren();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void Heal(int amount)
